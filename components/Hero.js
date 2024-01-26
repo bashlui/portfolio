@@ -1,16 +1,15 @@
  export const Hero = () => {
     return (
             <div className="bg-gray-700 rounded-md border-8 border-y-gray-500 animate-fade-in-left">
-                <h1 className="text-gray-50 text-left py-3 px-4">Hey, it's Luis</h1>
-                <button className="left-1"></button>
-                    <p className="text-gray-50 text-left py-4 px-4">
+                <h1 className="text-gray-50 text-center py-3 px-4">Hey, it's Luis</h1>
+                    <p className="text-gray-50 text-center py-4 px-4">
                         I'm currently focusing in Data Science developing and FrontEnd tools.
                     </p>
-                <div className="flex items-start md:justify-start">
+                <div className="flex items-center md:justify-center">
                     <a 
                         href="https://github.com/bashlui"
                         target="_blank"
-                        className="inline-flex items-end"
+                        className="inline-flex"
                     >
                         <svg 
                         xmlns="http://www.w3.org/2000/svg" 
