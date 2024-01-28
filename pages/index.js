@@ -6,7 +6,7 @@ import { Tools } from "@/components/Tools";
 const index = () => {
   return (
     <div>
-      <div className="flex-auto px-40 pt-40 m-40">
+      <div className="flex-auto px-40 m-40">
         <Hero />
       </div>
       <div className="flex-auto px-50 pt-50 m-40">
