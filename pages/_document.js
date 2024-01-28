@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en" className="dark">
       <Head />
       <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet" />
-      <body className="bg-slate-400">
+      <body className="bg-zinc-800">
         <Main />
         <NextScript />
       </body>

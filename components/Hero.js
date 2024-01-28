@@ -1,6 +1,6 @@
  export const Hero = () => {
     return (
-            <div className="bg-gray-700 rounded-md border-8 border-y-gray-500 animate-fade-in-left">
+            <div className="bg-gray-950 rounded-md border-8 animate-fade-in-left">
                 <h1 className="text-gray-50 text-center py-3 px-4">Hey, it's Luis</h1>
                     <p className="text-gray-50 text-center py-4 px-4">
                         I'm currently focusing in Data Science developing and FrontEnd tools.
