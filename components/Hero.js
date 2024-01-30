@@ -1,9 +1,9 @@
  export const Hero = () => {
     return (
-            <div className="bg-gray-950 rounded-md border-8 animate-fade-in-left">
+            <div className="bg-slate-400 animate-fade-in-left">
                 <h1 className="text-gray-50 text-center py-3 px-4">Hey, it's Luis</h1>
                     <p className="text-gray-50 text-center py-4 px-4">
-                        I'm currently focusing in Data Science developing and FrontEnd tools.
+                        I'm currently in FrontEnd development, solving problem skills and Data Science.
                     </p>
                 <div className="flex items-center md:justify-center">
                     <a 

@@ -6,13 +6,13 @@ import { Tools } from "@/components/Tools";
 const index = () => {
   return (
     <div>
-      <div className="flex-auto px-40 m-40">
+      <div className="flex-auto py-40">
         <Hero />
       </div>
-      <div className="flex-auto px-50 pt-50 m-40">
+      <div className="flex-auto pt-40">
         <Info />
       </div>
-      <div className="flex-auto px-55 pt-55 m-40">
+      <div className="flex-auto py-40">
         <Tools />
       </div>
     </div>

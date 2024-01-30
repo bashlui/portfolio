@@ -11,10 +11,6 @@ module.exports = {
         sans: ['Urbanist'],
       },
       keyframes: {
-        'desplazamiento-infinito': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(40%)' },
-        },
         'fade-in-left': {
           '0%': {
             opacity: '0',
@@ -27,7 +23,6 @@ module.exports = {
         }
       },
       animation: {
-        'animate-scrolling-svg': 'desplazamiento-infinito 5s linear infinite',
         'fade-in-left': 'fade-in-left 1s ease-out'
       }
     },
