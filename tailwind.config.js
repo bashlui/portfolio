@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Urbanist'],
+        sans: ['Lexend Deca', 'sans-serif'],
       },
       keyframes: {
         'fade-in-left': {
