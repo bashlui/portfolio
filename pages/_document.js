@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en" className="scroll-smooth">
       <Head />
       <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet" />
-      <body className="bg-white">
+      <body className="bg-black">
         <Main />
         <NextScript />
       </body>

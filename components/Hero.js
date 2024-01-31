@@ -1,11 +1,11 @@
  export const Hero = () => {
     return (
-            <div className="bg-slate-400 animate-fade-in-left">
-                <h1 className="text-gray-50 text-center py-3 px-4">Hey, it's Luis</h1>
-                    <p className="text-gray-50 text-center py-4 px-4">
+            <div className="bg-orange-700">
+                <h1 className="text-gray-50 text-center py-3 px-4 animate-fade-in-left">Hey, it's Luis</h1>
+                    <p className="text-gray-50 text-center py-4 px-4 animate-fade-in-left">
                         I'm currently in FrontEnd development, solving problem skills and Data Science.
                     </p>
-                <div className="flex items-center md:justify-center">
+                <div className="flex items-center md:justify-center animate-fade-in-left">
                     <a 
                         href="https://github.com/bashlui"
                         target="_blank"
