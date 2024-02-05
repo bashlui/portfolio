@@ -10,6 +10,10 @@ export const Info = () => {
                 <h2 className="text-left m-5">I'm a problem solver</h2>
                 <p className="flex-auto px-4 text-center">I'm always looking for new ways to solve problems. I'm not afraid to take risks and try new things.</p>
             </div>
+            <div className="text-gray-50 bg-stone-500 flex items-center py-8 m-5">
+                <h2 className="text-left m-5">I'm a team player</h2>
+                <p className="flex-auto px-4 text-center">I'm always looking for new ways to solve problems. I'm not afraid to take risks and try new things.</p>
+            </div>
         </div>
     );
 }
