@@ -24,7 +24,10 @@ module.exports = {
       },
       animation: {
         'fade-in-left': 'fade-in-left 1s ease-out'
-      }
+      },
+      colors: {
+        'rock': '#202020',
+      },
     },
   },
   plugins: [],
