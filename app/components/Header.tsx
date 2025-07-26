@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -11,15 +11,36 @@ import {
   DropdownMenuTrigger,
 } from "@/ui/dropdown-menu";
 import { useTheme } from "../context/ThemeContext";
-import { Github, Mail, Linkedin } from 'lucide-react';
-
+import { GitBranch, Mail } from 'lucide-react';
+import { Linkedin } from 'lucide-react'; // Assuming you have a Linkedin icon component
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [barStyle, setBarStyle] = useState({ left: 0, width: 0 });
+  const navRef = useRef<HTMLElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLinkHover = (linkId: string, event: React.MouseEvent<HTMLElement>) => {
+    const target = event.currentTarget;
+    const nav = navRef.current;
+    if (nav && target) {
+      const navRect = nav.getBoundingClientRect();
+      const linkRect = target.getBoundingClientRect();
+      setBarStyle({
+        left: linkRect.left - navRect.left,
+        width: linkRect.width,
+      });
+      setHoveredLink(linkId);
+    }
+  };
+
+  const handleNavLeave = () => {
+    setHoveredLink(null);
   };
 
   return (
@@ -100,28 +121,51 @@ export default function Header() {
       </div>
 
       {/* Navigation - Below Logo */}
-      <nav className="hidden md:flex items-center space-x-8">
+      <nav 
+        ref={navRef}
+        className="hidden md:flex items-center space-x-8 relative"
+        onMouseLeave={handleNavLeave}
+      >
+        {/* Animated underline bar */}
+        <div
+          className={`absolute bottom-0 h-0.5 bg-foreground transition-all duration-300 ease-out ${
+            hoveredLink ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            left: `${barStyle.left}px`,
+            width: `${barStyle.width}px`,
+            transform: 'translateY(8px)', // Position below the text
+          }}
+        />
+        
         <Link
           href="/"
-          className="text-muted-foreground hover:text-foreground transition-colors text-lg"
+          className="text-muted-foreground hover:text-foreground transition-colors text-lg relative z-10"
+          onMouseEnter={(e) => handleLinkHover('home', e)}
         >
-          
           home
         </Link>
         <Link
           href="/about"
-          className="text-muted-foreground hover:text-foreground transition-colors text-lg"
+          className="text-muted-foreground hover:text-foreground transition-colors text-lg relative z-10"
+          onMouseEnter={(e) => handleLinkHover('about', e)}
         >
           about
         </Link>
         <Link
           href="/projects"
-          className="text-muted-foreground hover:text-foreground transition-colors text-lg"
+          className="text-muted-foreground hover:text-foreground transition-colors text-lg relative z-10"
+          onMouseEnter={(e) => handleLinkHover('projects', e)}
         >
           projects
         </Link>
         <DropdownMenu>
-          <DropdownMenuTrigger>contact</DropdownMenuTrigger>
+          <DropdownMenuTrigger 
+            onMouseEnter={(e) => handleLinkHover('contact', e)}
+            className="relative z-10"
+          >
+            contact
+          </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>info</DropdownMenuLabel>
             <DropdownMenuSeparator />
@@ -132,7 +176,7 @@ export default function Header() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Github />
+              <GitBranch />
               <Link href="https://github.com/bashlui" target="_blank" rel="noopener noreferrer">
                 github
               </Link>
@@ -141,7 +185,6 @@ export default function Header() {
               <Mail />
               codewithlui@gmail.com
             </DropdownMenuItem>
-            <DropdownMenuItem></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </nav>
