@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Button } from '@/ui/button'
 import { useTheme } from '../context/ThemeContext'
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
     return (
         <header className="flex flex-col items-center p-6 bg-background border-b border-border">
             {/* Theme Toggle Button - Top Right */}
-            <div className="w-full flex justify-end mb-4">
+            <div className="flex justify-center mb-4">
                 <button
                     onClick={toggleTheme}
                     className="p-2 rounded-lg bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -64,7 +65,7 @@ export default function Header() {
                     Projects
                 </Link>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-lg">
-                    Contact
+                    <Button variant="outline">Contact</Button>
                 </Link>
             </nav>
 
@@ -98,7 +99,7 @@ export default function Header() {
                             className="text-muted-foreground hover:text-foreground transition-colors text-lg"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            Contact
+                            <Button variant="outline">Contact</Button>
                         </Link>
                     </nav>
                 </div>
