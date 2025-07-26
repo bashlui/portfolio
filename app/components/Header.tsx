@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -11,8 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/ui/dropdown-menu";
 import { useTheme } from "../context/ThemeContext";
-import { GitBranch, Mail } from 'lucide-react';
-import { Linkedin } from 'lucide-react'; // Assuming you have a Linkedin icon component
+import { GitBranch, Mail, Linkedin } from 'lucide-react';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -109,13 +108,10 @@ export default function Header() {
 
       {/* Logo/Brand - Centered */}
       <div className="flex flex-col items-center mb-6">
-        <h1
-          className="text-8xl lg:text-9xl font-bold text-foreground text-center"
-          id="title"
-        >
+        <h1 className="portfolio-title text-foreground font-bold text-8xl">
           aNtonio
         </h1>
-        <h2 className="text-xl font-light text-muted-foreground mt-2">
+        <h2 className="portfolio-subtitle">
           portfolio
         </h2>
       </div>

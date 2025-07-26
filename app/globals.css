@@ -87,7 +87,6 @@ body {
 
 #title {
   font-family: var(--font-tinos), serif;
-  font-size: 2rem;
   font-weight: 700;
   color: var(--foreground);
 }
@@ -136,5 +135,67 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Portfolio Title Styling */
+.portfolio-title {
+  font-family: var(--font-tinos), serif;
+  font-size: 6rem; /* text-8xl equivalent */
+  font-weight: 700; /* font-bold */
+  color: var(--foreground);
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  #title {
+    font-size: 8rem; /* lg:text-9xl equivalent */
+  }
+}
+
+.portfolio-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 300; /* font-light */
+  color: var(--muted-foreground);
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Content Styling */
+.section-title {
+  font-family: var(--font-tinos), serif;
+  font-size: 3rem; /* text-5xl */
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+.content-text {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75; /* leading-7 */
+  color: var(--muted-foreground);
+  max-width: 65ch; /* Optimal reading width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-container {
+  padding: 4rem 1.5rem;
+  max-width: 48rem; /* max-w-3xl */
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 4rem; /* md:text-6xl */
+  }
+  
+  .content-text {
+    font-size: 1.25rem; /* md:text-xl */
+  }
+  
+  .content-container {
+    padding: 6rem 2rem;
   }
 }
