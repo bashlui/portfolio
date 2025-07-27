@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Tinos } from "next/font/google";
+import { Geist, Geist_Mono, Tinos, Open_Sans, Merriweather } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -19,6 +19,18 @@ const tinos = Tinos({
   weight: ["400", "700"],
 });
 
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["300"],
+});
+
 export const metadata: Metadata = {
   title: "aNtonio",
   description: "portfolio",
@@ -32,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${tinos.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${tinos.variable} ${openSans.variable} ${merriweather.variable} antialiased`}
       >
         <ThemeProvider>
           {children}

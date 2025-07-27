@@ -153,6 +153,19 @@ body {
   }
 }
 
+.font-tinos {
+  font-family: var(--font-tinos), serif;
+}
+
+.font-open-sans {
+  font-family: var(--font-open-sans), sans-serif;
+}
+
+.font-merriweather {
+  font-family: var(--font-merriweather), serif;
+  font-weight: 300;
+}
+
 .portfolio-subtitle {
   font-size: 1.25rem; /* text-xl */
   font-weight: 300; /* font-light */
@@ -162,9 +175,9 @@ body {
 
 /* Content Styling */
 .section-title {
-  font-family: var(--font-tinos), serif;
+  font-family: var(--font-merriweather), serif;
   font-size: 3rem; /* text-5xl */
-  font-weight: 600;
+  font-weight: 300;
   color: var(--foreground);
   margin-bottom: 2rem;
   text-align: center;
@@ -172,6 +185,7 @@ body {
 }
 
 .content-text {
+  font-family: var(--font-open-sans), sans-serif;
   font-size: 1.125rem; /* text-lg */
   line-height: 1.75; /* leading-7 */
   color: var(--muted-foreground);
