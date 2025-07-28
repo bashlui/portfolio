@@ -57,7 +57,7 @@ export default function Home() {
             <div className="flex items-center justify-center mb-4">
               <Layers className="w-8 h-8 text-primary mr-3" />
               <h3 className="text-2xl font-merriweather font-light text-foreground">
-                yeah, I work with this
+                Tools
               </h3>
             </div>
             <p className="text-sm text-muted-foreground max-w-2xl mx-auto font-open-sans">
@@ -87,6 +87,9 @@ export default function Home() {
                 <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
                   TypeScript
                 </span>
+                <span className="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Tailwind CSS
+                </span>
               </div>
             </div>
 
@@ -98,13 +101,19 @@ export default function Home() {
               </h4>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
-                  API Development
+                  Node.js
+                </span>
+                <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Firebase
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                  PostgreSQL
                 </span>
                 <span className="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium">
-                  Database Management
+                  Express.js
                 </span>
                 <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
-                  Node.js
+                  REST APIs
                 </span>
               </div>
             </div>

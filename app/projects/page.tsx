@@ -91,14 +91,7 @@ export default function Projects() {
               </div>
               <div className="flex space-x-2">
                 <a 
-                  href="https://fsae-web-ten.vercel.app/" 
-                  className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
-                  title="View Live"
-                >
-                  <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                </a>
-                <a 
-                  href="https://github.com/bashlui/fsae-web" 
+                  href="https://github.com/bashlui/Heatshield-Swift" 
                   className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
                   title="View Code"
                 >

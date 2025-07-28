@@ -60,26 +60,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
-        {/* Navigation Links */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Navigation</h4>
-            <ul className="space-y-1">
-              <li><Link href="/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-xs text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-              <li><Link href="/projects" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Projects</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Connect</h4>
-            <ul className="space-y-1">
-              <li><a href="https://github.com/bashlui" className="text-xs text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/luisbolaina/" className="text-xs text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="mailto:codewithlui@gmail.com" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Email</a></li>
-            </ul>
-          </div>
 
           <div>
             <p className="text-xs text-muted-foreground italic">
