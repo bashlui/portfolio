@@ -74,7 +74,7 @@ export default function About() {
             <div>
               <h3 className="text-lg font-merriweather font-light text-foreground mb-2">Hackathons</h3>
               <p className="text-sm text-muted-foreground font-open-sans">
-                Participated in multiple hackathons including HackMTY and other regional competitions, where I've had the opportunity to lead cross-functional teams and develop innovative solutions under tight deadlines. These experiences have strengthened my leadership skills, taught me to think creatively under pressure, and enhanced my ability to coordinate diverse talents toward a common goal.
+                Participated in multiple hackathons including HackMTY and other regional competitions, where I&apos;ve had the opportunity to lead cross-functional teams and develop innovative solutions under tight deadlines. These experiences have strengthened my leadership skills, taught me to think creatively under pressure, and enhanced my ability to coordinate diverse talents toward a common goal.
               </p>
             </div>
             <div>
