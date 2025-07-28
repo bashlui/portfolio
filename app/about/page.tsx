@@ -1,5 +1,6 @@
-import { User, MapPin, Code2, Coffee, Rocket, Music } from "lucide-react"
+import { MapPin, Code2, Coffee, Rocket, ArrowLeft, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function About() {
   return (
@@ -8,12 +9,8 @@ export default function About() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <User className="w-12 h-12 text-primary mr-4" />
             <h1 className="section-title">about me</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the code
-          </p>
         </div>
 
         {/* Main Content */}
@@ -41,22 +38,55 @@ export default function About() {
             </div>
           </div>
 
-          {/* Journey & Goals */}
+          {/* Personal Photo Section */}
           <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <Rocket className="w-8 h-8 text-primary mr-3" />
-              <h2 className="text-2xl font-merriweather font-light text-foreground">Journey</h2>
+            <div className="flex flex-col items-center justify-center text-center h-full">
+              <div className="w-48 h-48 md:w-56 md:h-56 bg-muted border-2 border-dashed border-border rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                <Image
+                  src="/ntonio.jpeg" 
+                  alt="Antonio - Computer Science Student" 
+                  width={224} 
+                  height={224} 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div className="max-w-sm">
+                <h3 className="text-lg font-merriweather font-light text-foreground mb-2">
+                  Antonio
+                </h3>
+                <p className="text-sm text-muted-foreground font-open-sans">
+                </p>
+                <p className="text-xs text-muted-foreground font-open-sans mt-2 italic">
+                    I like a lot of things, music is one of them. Instruments like guitar and piano are my favorites, but I also enjoy listening to a wide range of genres.
+                    I also enjoy being outdoors, hanging out with friends, and exploring new places.
+                </p>
+              </div>
             </div>
-            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-              <p className="text-justify font-open-sans">
-                My coding journey started with curiosity and has evolved into a passion for 
-                full-stack development. I believe in continuous learning and staying updated 
-                with the latest technologies and best practices in the software development world.
+          </div>
+        </div>
+
+        {/* Experience */}
+        <div className="bg-card border border-border rounded-xl p-8 mb-12">
+          <h2 className="text-2xl font-merriweather font-light text-foreground text-center mb-8">
+            Team Experience and Leadership
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-merriweather font-light text-foreground mb-2">Hackathons</h3>
+              <p className="text-sm text-muted-foreground font-open-sans">
+                Participated in multiple hackathons including HackMTY and other regional competitions, where I've had the opportunity to lead cross-functional teams and develop innovative solutions under tight deadlines. These experiences have strengthened my leadership skills, taught me to think creatively under pressure, and enhanced my ability to coordinate diverse talents toward a common goal.
               </p>
-              <p className="text-justify font-open-sans">
-                Looking ahead, I&apos;m excited about exploring data engineering and machine learning. 
-                The intersection of software development and data science represents the future 
-                of technology, and I want to be part of that evolution.
+            </div>
+            <div>
+              <h3 className="text-lg font-merriweather font-light text-foreground mb-2">Student Organizations</h3>
+              <p className="text-sm text-muted-foreground font-open-sans">
+                Making projects for student organizations has been a rewarding experience, allowing me to collaborate with peers and contribute to the community.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-merriweather font-light text-foreground mb-2">Team Projects</h3>
+              <p className="text-sm text-muted-foreground font-open-sans">
+                Working with teams on various projects has taught me the importance of communication, collaboration, and shared goals. I thrive in environments where I can contribute my skills while learning from others.
               </p>
             </div>
           </div>
@@ -99,90 +129,29 @@ export default function About() {
           </div>
         </div>
 
-        {/* Music Taste Section */}
-        <div className="bg-card border border-border rounded-xl p-8 mb-20">
-          <div className="flex items-center justify-center mb-8">
-            <Music className="w-8 h-8 text-primary mr-3" />
-            <h2 className="text-2xl font-merriweather font-light text-foreground">My Music Taste</h2>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <p className="text-sm md:text-base text-muted-foreground font-open-sans leading-relaxed max-w-2xl mx-auto">
-                Music plays a huge role in my creative process and daily life. Here&apos;s an album that holds 
-                special meaning to me - it was released on January 1st, 2005, the exact year and month I was born! 
-                These chillout tracks perfectly capture the vibe I love when coding or just relaxing.
-              </p>
-            </div>
-            
-            {/* Apple Music Embed */}
-            <div className="flex justify-center">
-              <div className="w-full max-w-2xl">
-                <iframe 
-                  allow="autoplay *; encrypted-media *;" 
-                  frameBorder="0" 
-                  height="450" 
-                  style={{
-                    width: '100%',
-                    maxWidth: '660px',
-                    overflow: 'hidden',
-                    background: 'transparent',
-                    borderRadius: '12px'
-                  }}
-                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-                  src="https://embed.music.apple.com/mx/album/chillout-songs/1675541496?l=en-GB"
-                  title="Chillout Songs Album"
-                  className="mx-auto rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
-            
-            <div className="text-center mt-6">
-              <p className="text-xs text-muted-foreground font-open-sans">
-                🎵 Perfect coding soundtrack • Released January 1, 2005 • Born same year & month
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Fun Facts */}
-        <div className="bg-card border border-border rounded-xl p-8 mb-12">
-          <h2 className="text-2xl font-merriweather font-light text-foreground text-center mb-8">
-            When I&apos;m not coding...
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="space-y-2">
-              <div className="text-2xl">📚</div>
-              <p className="text-sm text-muted-foreground font-open-sans">Reading tech blogs and staying updated with industry trends</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-2xl">🎮</div>
-              <p className="text-sm text-muted-foreground font-open-sans">Gaming and exploring virtual worlds for inspiration</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-2xl">☕</div>
-              <p className="text-sm text-muted-foreground font-open-sans">Discovering new coffee shops and trying different brews</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-2xl">🌱</div>
-              <p className="text-sm text-muted-foreground font-open-sans">Learning about new technologies and experimenting with side projects</p>
-            </div>
-          </div>
-        </div>
 
         {/* Navigation */}
-        <div className="flex justify-center space-x-4">
-          <Link 
-            href="/" 
-            className="bg-muted text-muted-foreground px-6 py-3 rounded-xl hover:bg-accent hover:text-accent-foreground transition-colors font-medium"
-          >
-            ← Back to Home
-          </Link>
-          <Link 
-            href="/projects" 
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors font-medium"
-          >
-            View Projects →
-          </Link>
+        <div className="mt-20 text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/" 
+              className="bg-card border border-border text-foreground px-8 py-4 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium group"
+            >
+              <div className="flex items-center justify-center">
+                <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[-4px] transition-transform" />
+                <span>Back to Home</span>
+              </div>
+            </Link>
+            <Link 
+              href="/projects" 
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-medium group"
+            >
+              <div className="flex items-center justify-center">
+                <span>View My Projects</span>
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </main>

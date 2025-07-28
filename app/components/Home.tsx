@@ -1,7 +1,11 @@
+"use client"
+
 import { Code, Layers, GraduationCap, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Home() {
+  const [loadingLink, setLoadingLink] = useState<string | null>(null)
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -115,9 +119,6 @@ export default function Home() {
                 <span className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 px-3 py-1 rounded-full text-xs font-medium">
                   Data Engineering
                 </span>
-                <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-medium">
-                  Machine Learning
-                </span>
                 <span className="bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-xs font-medium">
                   Cloud Technologies
                 </span>
@@ -134,20 +135,44 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/about" 
-              className="bg-card border border-border text-foreground px-8 py-4 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium group"
+              onClick={() => setLoadingLink('/about')}
+              className={`bg-card border border-border text-foreground px-8 py-4 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium group relative ${
+                loadingLink === '/about' ? 'opacity-75 pointer-events-none' : ''
+              }`}
             >
               <div className="flex items-center justify-center">
-                <span>Learn About Me</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                {loadingLink === '/about' ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-foreground border-t-transparent rounded-full animate-spin mr-2"></div>
+                    <span>Loading...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Learn About Me</span>
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </div>
             </Link>
             <Link 
               href="/projects" 
-              className="bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-medium group"
+              onClick={() => setLoadingLink('/projects')}
+              className={`bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-medium group relative ${
+                loadingLink === '/projects' ? 'opacity-75 pointer-events-none' : ''
+              }`}
             >
               <div className="flex items-center justify-center">
-                <span>View My Projects</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                {loadingLink === '/projects' ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2"></div>
+                    <span>Loading...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>View My Projects</span>
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </div>
             </Link>
           </div>
