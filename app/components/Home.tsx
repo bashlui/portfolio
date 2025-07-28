@@ -1,6 +1,6 @@
 "use client"
 
-import { Code, Layers, GraduationCap, ArrowRight } from "lucide-react"
+import { Code, Layers, GraduationCap, ArrowRight, Library } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -55,7 +55,6 @@ export default function Home() {
         <div className="mt-20">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
-              <Layers className="w-8 h-8 text-primary mr-3" />
               <h3 className="text-2xl font-merriweather font-light text-foreground">
                 Tools
               </h3>
@@ -96,7 +95,7 @@ export default function Home() {
             {/* Backend */}
             <div className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300">
               <h4 className="text-lg font-merriweather font-light text-foreground mb-4 flex items-center">
-                <Layers className="w-5 h-5 mr-2 text-primary" />
+                <Library className="w-5 h-5 mr-2 text-primary" />
                 Backend
               </h4>
               <div className="flex flex-wrap gap-2">

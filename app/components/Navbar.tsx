@@ -161,7 +161,7 @@ export default function Navbar() {
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://linkedin.com/in/luisbolaina/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 px-3 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
@@ -170,7 +170,7 @@ export default function Navbar() {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:codewithlui@gmail.com"
                   className="flex items-center space-x-3 px-3 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                 >
                   <Mail className="w-4 h-4" />
