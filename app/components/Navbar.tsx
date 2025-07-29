@@ -83,7 +83,7 @@ export default function Navbar() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://linkedin.com/in/yourprofile"
+                    href="https://linkedin.com/in/luisbolaina"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"

@@ -1,6 +1,6 @@
 "use client"
 
-import { Code, Layers, GraduationCap, ArrowRight, Library } from "lucide-react"
+import { Code, GraduationCap, ArrowRight, Library } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
