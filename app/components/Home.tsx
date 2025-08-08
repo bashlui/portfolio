@@ -124,10 +124,13 @@ export default function Home() {
               </h4>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 px-3 py-1 rounded-full text-xs font-medium">
-                  Data Engineering
+                  Go Language
                 </span>
                 <span className="bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-xs font-medium">
                   Cloud Technologies
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Kubernetes
                 </span>
               </div>
             </div>

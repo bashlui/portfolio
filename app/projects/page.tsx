@@ -63,8 +63,8 @@ export default function Projects() {
                 <h3 className="text-lg font-merriweather font-light text-foreground">
                   Status
                 </h3>
-                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
-                  In progress
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Complete - Updates ongoing
                 </span>
               </div>
 
@@ -125,7 +125,7 @@ export default function Projects() {
                   Status
                 </h3>
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
-                  Completed
+                  Complete
                 </span>
               </div>
 
@@ -167,7 +167,7 @@ export default function Projects() {
                   <div className="flex space-x-2">
                     <a
                       href="https://cipheria.pro"
-                      className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors opacity-50"
+                      className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
                       title="Live Site"
                     >
                       <ExternalLink className="w-4 h-4 text-muted-foreground" />
@@ -277,6 +277,9 @@ export default function Projects() {
                 </span>
                 <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
                   REST API
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Gin Framework
                 </span>
               </div>
             </div>
