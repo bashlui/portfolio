@@ -41,8 +41,7 @@ export default function Home() {
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-justify font-open-sans">
                 I&apos;m currently focusing on full-stack development, gaining skills in front-end 
                 frameworks like React and Astro, as well as back-end experience by developing 
-                APIs and database management. For the future, I&apos;m also looking forward to 
-                exploring data engineering and expanding my expertise in that domain.
+                APIs and database management. I&apos;m currently focusing more on backend technologies.
               </p>
             </div>
             <div className="flex justify-center mt-6">
@@ -184,6 +183,18 @@ export default function Home() {
               </div>
             </Link>
           </div>
+        </div>
+
+        {/* Resume Button Section */}
+        <div className="mt-12 text-center">
+          <a
+            href="/Antonio_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold shadow hover:bg-primary/90 transition-colors text-base"
+          >
+            View My Resume
+          </a>
         </div>
       </div>
     </main>
