@@ -35,7 +35,7 @@ export default function Projects() {
                 </div>
                 <div className="flex space-x-2">
                   <a
-                    href="https://fsae-web-ten.vercel.app/"
+                    href="https://fsae-tec.vercel.app/"
                     className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
                     title="View Live"
                   >
