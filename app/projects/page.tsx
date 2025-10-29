@@ -135,8 +135,8 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
-                  SwiftUI
+                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                  Swift
                 </span>
                 <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-medium">
                   MapKit
@@ -213,6 +213,135 @@ export default function Projects() {
                 </div>
               </div>
             </div>
+            {/* End of Cipheria Web */}
+
+            {/* Opsight */}
+            <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                    <h2 className="text-xl font-merriweather font-light text-foreground">
+                      Opsight
+                    </h2>
+                  </div>
+                  <div className="flex space-x-2">
+                    <a
+                      href="https://github.com/HackMTY-2025-GateGroup/opsight-app"
+                      className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
+                      title="Live Site"
+                    >
+                      <Github className="w-4 h-4 text-muted-foreground" />
+                    </a>
+                  </div>
+                </div>
+
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-justify mb-6 font-open-sans">
+                  Opsight (Operations + Insight) is an iOS/iPadOS application designed for Gategroup airline catering warehouse operations. The app streamlines the complete catering workflow with intelligent batch management, waste reduction, and on-device computer vision for cart verification.
+                </p>
+
+                {/** Status */}
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-merriweather font-light text-foreground">
+                    Status
+                  </h3>
+                  <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                    Complete
+                  </span>
+                </div>
+
+                <div className="flex items-center text-xs text-muted-foreground mb-4">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span>October 2025</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                    MLX
+                  </span>
+                  <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                    Apple Foundation
+                  </span>
+                  <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                    ARKit
+                  </span>
+                  <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                    Swift
+                  </span>
+                  <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                    YOLO
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* End of Opsight */}
+
+            {/* Brew */}
+            <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-yellow-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-yellow-700 rounded-full mr-3"></div>
+                    <h2 className="text-xl font-merriweather font-light text-foreground">
+                      Brew
+                    </h2>
+                  </div>
+                  <div className="flex space-x-2">
+                    <a
+                      href="https://github.com/brew-kafe/brew-app"
+                      className="p-2 bg-muted rounded-lg hover:bg-accent transition-colors"
+                      title="View Code"
+                    >
+                      <Github className="w-4 h-4 text-muted-foreground" />
+                    </a>
+                  </div>
+                </div>
+
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-justify mb-6 font-open-sans">
+                  Brew is a coffee brewing app that helps users discover new
+                  coffee recipes, track their brewing habits, and improve their
+                  coffee-making skills through personalized recommendations.
+                </p>
+
+                {/** Status */}
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-merriweather font-light text-foreground">
+                    Status
+                  </h3>
+                  <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                    In Development
+                  </span>
+                </div>
+
+                <div className="flex items-center text-xs text-muted-foreground mb-4">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span>Coming Soon</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                    Swift
+                  </span>
+                  <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                    MapKit
+                  </span>
+                  <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                    FastAPI
+                  </span>
+                  <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-medium">
+                    Apple Foundation
+                  </span>
+                  <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                    CoreData
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* End of Brew */}
         </div>
 
         {/* Project Philosophy */}
