@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Tinos, Open_Sans, Merriweather } from "next/font/goo
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
+import SmoothScroll from "./components/SmoothScroll";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +35,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "aNtonio",
+  title: "antonio",
   description: "portfolio",
   icons: {
     icon: "/favicon.ico",
@@ -51,10 +53,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${tinos.variable} ${openSans.variable} ${merriweather.variable} antialiased`}
       >
         <ThemeProvider>
-          <Navbar />
-          <div className="pt-16">
-            {children}
-          </div>
+            <SmoothScroll>
+              <Navbar />
+              <div className="pt-16">
+                {children}
+              </div>
+            </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

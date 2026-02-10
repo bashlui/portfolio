@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center md:justify-between text-center md:text-left mb-8 gap-6">
           <div className="flex-1">
             <h3 className="text-2xl font-tinos font-bold text-foreground mb-1">
-              aNtonio
+              antonio
             </h3>
             <p className="text-sm text-muted-foreground mb-3">
               Computer Science Student & Developer

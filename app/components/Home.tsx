@@ -1,8 +1,10 @@
 "use client"
 
-import { Code, GraduationCap, ArrowRight, Library } from "lucide-react"
+import { Code, GraduationCap, ArrowRight, Library, MapPin, Coffee, Rocket, Code2 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
+import BentoGrid from "./BentoGrid"
 
 export default function Home() {
   const [loadingLink, setLoadingLink] = useState<string | null>(null)
@@ -10,45 +12,94 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <div className="content-container">
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          
-          {/* Who Section */}
-          <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-center mb-6">
-                <h1 className="section-title text-left">who?</h1>
-              </div>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-justify font-open-sans">
-                Hello! My name is Antonio, and I&apos;m a student at Tecnológico de Monterrey, 
-                currently pursuing a B.S. in Computer Science. I&apos;m passionate about building 
-                high-quality, impactful software solutions. My mission is to deliver outstanding 
-                products through collaboration, continuous learning, and a strong focus on clean, 
-                efficient code.
-              </p>
+        
+        {/* About Me Section - Integrated */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+            {/* Profile Card */}
+            <div className="lg:col-span-5 bg-card border border-border rounded-xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-muted mb-6">
+                    <Image 
+                        src="/ntonio.jpeg" 
+                        alt="Antonio" 
+                        width={192} 
+                        height={192} 
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                <h2 className="text-2xl font-merriweather font-light text-foreground mb-2">Antonio</h2>
+                <div className="flex items-center text-muted-foreground text-sm mb-6">
+                    <MapPin className="w-4 h-4 mr-1" />
+                    <span>Monterrey, MX</span>
+                </div>
+                <p className="text-muted-foreground font-open-sans text-sm leading-relaxed mb-6">
+                    Computer Science Student at Tecnológico de Monterrey. Passionate about building high-quality software solutions and exploring new technologies.
+                </p>
+                <div className="flex gap-4">
+                    <a href="https://github.com/bashlui" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-foreground hover:text-background transition-colors">
+                        <Code className="w-5 h-5" />
+                    </a>
+                    <a href="https://linkedin.com/in/luisbolaina" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-foreground hover:text-background transition-colors">
+                         <GraduationCap className="w-5 h-5" />
+                    </a>
+                </div>
             </div>
-            <div className="flex justify-center mt-6">
-              <GraduationCap className="w-8 h-8 text-muted-foreground" />
-            </div>
-          </div>
 
-          {/* What Section */}
-          <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-center mb-6">
-                <h1 className="section-title text-left">focus?</h1>
-              </div>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-justify font-open-sans">
-                I&apos;m currently focusing on full-stack development, gaining skills in front-end 
-                frameworks like React and Astro, as well as back-end experience by developing 
-                APIs and database management. I&apos;m currently focusing more on backend technologies.
-              </p>
+            {/* Details Column */}
+            <div className="lg:col-span-7 space-y-8">
+                {/* Highlights */}
+                <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                     <h3 className="text-lg font-merriweather font-light text-foreground mb-4">Experience & Leadership</h3>
+                     <div className="space-y-4">
+                        <div className="flex items-start">
+                            <Rocket className="w-5 h-5 text-primary mr-3 mt-1" />
+                            <div>
+                                <h4 className="font-medium text-foreground">Hackathons</h4>
+                                <p className="text-sm text-muted-foreground font-open-sans">
+                                    Led diverse teams in competitions like HackMTY, developing innovative solutions under pressure.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start">
+                            <Code2 className="w-5 h-5 text-primary mr-3 mt-1" />
+                            <div>
+                                <h4 className="font-medium text-foreground">Team Projects</h4>
+                                <p className="text-sm text-muted-foreground font-open-sans">
+                                    Collaborated on complex software engineering projects, focusing on clean architecture and scalable design.
+                                </p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+                {/* My Approach */}
+                <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                    <h3 className="text-lg font-merriweather font-light text-foreground mb-4">My Approach</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="text-center p-2">
+                             <div className="mx-auto w-10 h-10 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mb-2">
+                                <Code className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                             </div>
+                             <span className="text-sm font-medium">Clean Code</span>
+                        </div>
+                        <div className="text-center p-2">
+                             <div className="mx-auto w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mb-2">
+                                <Coffee className="w-5 h-5 text-green-600 dark:text-green-400" />
+                             </div>
+                             <span className="text-sm font-medium">Collaboration</span>
+                        </div>
+                        <div className="text-center p-2">
+                             <div className="mx-auto w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mb-2">
+                                <Rocket className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                             </div>
+                             <span className="text-sm font-medium">Innovation</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="flex justify-center mt-6">
-              <Code className="w-8 h-8 text-muted-foreground" />
-            </div>
-          </div>
         </div>
+
+        {/* Selected Projects */}
+        <BentoGrid />
 
         {/* Skills Preview */}
         <div className="mt-20">
@@ -158,28 +209,7 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    <span>Learn About Me</span>
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
-              </div>
-            </Link>
-            <Link 
-              href="/projects" 
-              onClick={() => setLoadingLink('/projects')}
-              className={`bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-medium group relative ${
-                loadingLink === '/projects' ? 'opacity-75 pointer-events-none' : ''
-              }`}
-            >
-              <div className="flex items-center justify-center">
-                {loadingLink === '/projects' ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2"></div>
-                    <span>Loading...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>View My Projects</span>
+                    <span>Detailed About Me</span>
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
