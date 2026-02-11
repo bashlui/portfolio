@@ -9,7 +9,7 @@ import ThemeToggle from "./ThemeToggle"; // Assuming ThemeToggle exists or needs
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Projects", href: "/#projects" },
+  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
@@ -43,7 +43,7 @@ export default function Navbar() {
         )}
       >
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold font-tinos tracking-tight text-primary dark:text-white">
+        <Link href="/" className="text-xl tracking-tight text-primary dark:text-white">
           antonio.
         </Link>
 

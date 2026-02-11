@@ -11,7 +11,7 @@ export default function WhoAmI() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-2xl font-semibold tracking-tight text-foreground"
+            className="text-8xl font-semibold tracking-tight text-foreground"
           >
             Who Am I
           </motion.h3>
@@ -24,7 +24,7 @@ export default function WhoAmI() {
           className="text-center"
         >
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               I&apos;m a passionate Computer Science student at Tecnológico de Monterrey, 
               dedicated to building innovative solutions through code. I thrive on turning 
               complex problems into elegant, user-friendly applications that make a real impact.

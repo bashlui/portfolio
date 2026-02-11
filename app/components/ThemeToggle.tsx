@@ -9,7 +9,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-full p-2 transition-colors hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring"
+      className="rounded-full p-2 transition-colors hover:bg-muted focus:outline-none"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (

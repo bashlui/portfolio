@@ -46,7 +46,7 @@ export default function Contact() {
     <main className="min-h-screen bg-background text-foreground">
       <section className="py-20 px-6 max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-merriweather font-light mb-6">Get In Touch</h1>
+          <h1 className="text-4xl font-light mb-6">Get In Touch</h1>
           <p className="text-lg text-muted-foreground mb-8">
             I&apos;m always interested in hearing about new opportunities, collaborations, or just having a chat about technology.
           </p>

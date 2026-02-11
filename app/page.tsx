@@ -1,7 +1,6 @@
 import Hero from "./components/Hero"
 import WhoAmI from "./components/WhoAmI"
 import TechStack from "./components/TechStack"
-import BentoGrid from "./components/BentoGrid"
 import Footer from "./components/Footer"
 
 export default function Page() {
@@ -10,7 +9,6 @@ export default function Page() {
       <Hero />
       <WhoAmI />
       <TechStack />
-      <BentoGrid />
       <Footer />
     </main>
   )

@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Linkedin, Mail, Heart, MapPin, Calendar } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Calendar } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -13,7 +13,7 @@ export default function Footer() {
         {/* Top Section */}
         <div className="flex flex-col md:flex-row items-center md:justify-between text-center md:text-left mb-8 gap-6">
           <div className="flex-1">
-            <h3 className="text-2xl font-tinos font-bold text-foreground mb-1">
+            <h3 className="text-2xl text-foreground mb-1">
               antonio
             </h3>
             <p className="text-sm text-muted-foreground mb-3">
@@ -74,11 +74,6 @@ export default function Footer() {
           <div>
             <p className="text-xs text-muted-foreground">
               © {currentYear} aNtonio. All rights reserved.
-            </p>
-          </div>
-          <div>
-            <p className="flex items-center justify-center md:justify-end text-xs text-muted-foreground">
-              Made with <Heart className="w-3 h-3 mx-1 text-red-500" /> using Next.js & Tailwind CSS
             </p>
           </div>
         </div>

@@ -1,20 +1,93 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
-import { FaReact, FaNodeJs, FaPython } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si"
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaPython, 
+  FaSwift,
+  FaGithub,
+  FaDocker,
+  FaSlack
+} from "react-icons/fa"
+import { 
+  SiTypescript, 
+  SiPostman,
+  SiFigma,
+  SiXcode,
+  SiFirebase,
+  SiVercel,
+  SiLinear
+} from "react-icons/si"
 
+const TechItem = ({ Icon, name, color }: { Icon: React.ComponentType<{ className: string; ref: React.Ref<SVGElement> }>; name: string; color: string }) => {
+  const iconRef = React.useRef<SVGElement>(null);
+
+  return (
+    <div className="flex flex-col items-center gap-2 group cursor-pointer">
+      <div 
+        className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border transition-all duration-300 dark:bg-muted/30"
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = color;
+          (e.currentTarget as HTMLElement).style.backgroundColor = color + '15';
+          if (iconRef.current) {
+            iconRef.current.style.color = color;
+          }
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = 'hsl(var(--border))';
+          (e.currentTarget as HTMLElement).style.backgroundColor = 'hsl(var(--muted))';
+          if (iconRef.current) {
+            iconRef.current.style.color = '';
+          }
+        }}
+      >
+        {Icon && (
+          <Icon 
+            ref={iconRef}
+            className="w-10 h-10 transition-colors duration-300 text-foreground dark:text-white" 
+          />
+        )}
+      </div>
+      <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">{name}</span>
+    </div>
+  );
+};
 
 export default function TechStack() {
+  const codinglanguages = [
+    { Icon: FaReact, name: "React", color: "#61DAFB" },
+    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+    { Icon: FaNodeJs, name: "Node.js", color: "#339933" },
+    { Icon: FaPython, name: "Python", color: "#3776AB" },
+    { Icon: FaSwift, name: "Swift", color: "#FA7343" },
+  ];
+
+  const tools = [
+    { Icon: FaGithub, name: "GitHub", color: "#181717" },
+    { Icon: SiPostman, name: "Postman", color: "#FF6C37" },
+    { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
+    { Icon: SiXcode, name: "Xcode", color: "#147EFB" },
+    { Icon: FaDocker, name: "Docker", color: "#2496ED" },
+    { Icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
+    { Icon: SiVercel, name: "Vercel", color: "#000000" },
+  ];
+
+  const teamOrganization = [
+    { Icon: SiLinear, name: "Linear", color: "#5E6AD2" },
+    { Icon: FaSlack, name: "Slack", color: "#E01E5A" },
+  ];
+
   return (
     <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-center mb-12">
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-2xl font-semibold tracking-tight text-foreground"
+            className="text-6xl font-semibold tracking-tight text-foreground"
           >
             Tech Stack
           </motion.h3>
@@ -24,63 +97,89 @@ export default function TechStack() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg text-muted-foreground mb-12 text-center"
+          className="text-xl text-muted-foreground mb-16 text-center"
         >
-          Technologies I work with to bring ideas to life
+          Technologies and tools I use to bring ideas to life
         </motion.p>
-        
-        <motion.div 
+
+        {/* Coding Languages */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16"
+        >
+          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Coding Languages & Frameworks</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {codinglanguages.map((tech) => (
+              <TechItem key={tech.name} {...tech} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tools */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"
+          className="mb-16"
         >
-          {/* React */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-[#61DAFB] group-hover:bg-[#61DAFB]/10 transition-all duration-300">
-              <FaReact className="w-10 h-10 text-muted-foreground group-hover:text-[#61DAFB] transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">React</span>
+          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Tools & Services</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {tools.map((tech) => (
+              <TechItem key={tech.name} {...tech} />
+            ))}
           </div>
+        </motion.div>
 
-          {/* TypeScript */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-[#3178C6] group-hover:bg-[#3178C6]/10 transition-all duration-300">
-              <SiTypescript className="w-10 h-10 text-muted-foreground group-hover:text-[#3178C6] transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">TypeScript</span>
+        {/* Team Organization */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16"
+        >
+          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Team Organization</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 items-center justify-items-center">
+            {teamOrganization.map((tech) => (
+              <TechItem key={tech.name} {...tech} />
+            ))}
           </div>
+        </motion.div>
 
-          {/* Node.js */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-[#339933] group-hover:bg-[#339933]/10 transition-all duration-300">
-              <FaNodeJs className="w-10 h-10 text-muted-foreground group-hover:text-[#339933] transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">Node.js</span>
-          </div>
-
-          {/* Python */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-[#3776AB] group-hover:bg-[#3776AB]/10 transition-all duration-300">
-              <FaPython className="w-10 h-10 text-muted-foreground group-hover:text-[#3776AB] transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">Python</span>
-          </div>
-
-          {/* Tailwind */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-[#06B6D4] group-hover:bg-[#06B6D4]/10 transition-all duration-300">
-              <SiTailwindcss className="w-10 h-10 text-muted-foreground group-hover:text-[#06B6D4] transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">Tailwind</span>
-          </div>
-
-          {/* Next.js */}
-          <div className="flex flex-col items-center gap-2 group cursor-pointer">
-            <div className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border group-hover:border-foreground group-hover:bg-foreground/5 transition-all duration-300">
-              <SiNextdotjs className="w-10 h-10 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">Next.js</span>
+        {/* Call to Action Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-30 text-center"
+        >
+          <p className="text-xl text-muted-foreground mb-30 max-w-2xl mx-auto">
+            I&apos;m always open to new opportunities and collaborations. Let&apos;s create something amazing together!
+          </p>
+          <motion.blockquote
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-20 text-3xl md:text-4xl font-bold text-foreground max-w-3xl mx-auto leading-tight"
+          >
+            &quot;The only way to do great work is to love what you do.&quot;
+          </motion.blockquote>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:antonio@example.com"
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300"
+            >
+              Get in Touch
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-card border border-border text-foreground rounded-xl font-medium hover:bg-accent hover:-translate-y-1 transition-all duration-300"
+            >
+              View Resume
+            </a>
           </div>
         </motion.div>
       </div>
