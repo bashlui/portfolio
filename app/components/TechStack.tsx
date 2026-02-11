@@ -173,7 +173,7 @@ export default function TechStack() {
               Get in Touch
             </a>
             <a
-              href="/resume.pdf"
+              href="/Antonio_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-card border border-border text-foreground rounded-xl font-medium hover:bg-accent hover:-translate-y-1 transition-all duration-300"
