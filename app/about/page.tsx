@@ -17,7 +17,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-center leading-[0.9] text-primary dark:text-white mb-12"
+          className="text-6xl md:text-7xl lg:text-8xl font-thin tracking-tight text-center leading-[0.9] text-primary dark:text-white mb-12"
         >
           Get to <span className="text-muted-foreground dark:text-white">Know Me</span>
         </motion.h1>
@@ -50,7 +50,7 @@ export default function About() {
           >
             <div className="flex items-center mb-6">
               <MapPin className="w-8 h-8 text-primary mr-3" />
-              <h2 className="text-3xl font-bold tracking-tight text-foreground">Background</h2>
+              <h2 className="text-3xl font-light tracking-tight text-foreground">Background</h2>
             </div>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p className="font-light">
@@ -86,7 +86,7 @@ export default function About() {
                 />
               </div>
               <div className="max-w-sm">
-                <h3 className="text-2xl font-bold tracking-tight text-foreground mb-2">
+                <h3 className="text-2xl font-light tracking-tight text-foreground mb-2">
                   Antonio
                 </h3>
                 <p className="text-muted-foreground">
@@ -107,24 +107,24 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 mb-20 px-6 max-w-6xl mx-auto"
         >
-          <h2 className="text-4xl font-bold tracking-tight text-foreground text-center mb-12">
+          <h2 className="text-4xl font-light tracking-tight text-foreground text-center mb-12">
             Team Experience and <span className="text-primary">Leadership</span>
           </h2>
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Hackathons</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Hackathons</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Participated in multiple hackathons including HackMTY and other regional competitions, where I&apos;ve had the opportunity to lead cross-functional teams and develop innovative solutions under tight deadlines. These experiences have strengthened my leadership skills, taught me to think creatively under pressure, and enhanced my ability to coordinate diverse talents toward a common goal.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Student Organizations</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Student Organizations</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Making projects for student organizations has been a rewarding experience, allowing me to collaborate with peers and contribute to the community.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Team Projects</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Team Projects</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Working with teams on various projects has taught me the importance of communication, collaboration, and shared goals. I thrive in environments where I can contribute my skills while learning from others.
               </p>
@@ -141,14 +141,14 @@ export default function About() {
         >
           <div className="flex items-center justify-center mb-12">
             <Code2 className="w-10 h-10 text-primary mr-4" />
-            <h2 className="text-4xl font-bold tracking-tight text-foreground">My Approach</h2>
+            <h2 className="text-4xl font-light tracking-tight text-foreground">My Approach</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 dark:bg-blue-900/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Code2 className="w-10 h-10 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Clean Code</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Clean Code</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 I believe in writing code that&apos;s not just functional, but readable, maintainable, and efficient.
               </p>
@@ -157,7 +157,7 @@ export default function About() {
               <div className="bg-green-100 dark:bg-green-900/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Coffee className="w-10 h-10 text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Collaboration</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Collaboration</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Great software is built by great teams. I value communication, feedback, and shared learning.
               </p>
@@ -166,7 +166,7 @@ export default function About() {
               <div className="bg-purple-100 dark:bg-purple-900/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Rocket className="w-10 h-10 text-purple-600 dark:text-purple-400" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Innovation</h3>
+              <h3 className="text-2xl font-light tracking-tight text-foreground mb-4">Innovation</h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Always looking for new ways to solve problems and improve existing solutions.
               </p>
@@ -184,7 +184,7 @@ export default function About() {
             >
               <Link 
                 href="/" 
-                className="bg-card/50 backdrop-blur-sm border border-border text-foreground px-8 py-4 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-semibold group inline-block"
+                className="bg-card/50 backdrop-blur-sm border border-border text-foreground px-8 py-4 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-light group inline-block"
               >
                 <div className="flex items-center justify-center">
                   <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[-4px] transition-transform" />
@@ -199,7 +199,7 @@ export default function About() {
             >
               <Link 
                 href="/#projects" 
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-semibold group inline-block"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-light group inline-block"
               >
                 <div className="flex items-center justify-center">
                   <span>View My Projects</span>

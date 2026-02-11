@@ -53,7 +53,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground text-primary dark:text-white"
+              className="text-sm font-light text-muted-foreground transition-colors hover:text-foreground text-primary dark:text-white"
             >
               {link.name}
             </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground py-2 hover:bg-muted/50 rounded-xl transition-colors"
+                  className="text-lg font-light text-foreground py-2 hover:bg-muted/50 rounded-xl transition-colors"
                 >
                   {link.name}
                 </Link>

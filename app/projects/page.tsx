@@ -44,8 +44,8 @@ export default function Projects() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-20"
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-center leading-[0.9] text-primary dark:text-white mb-6">
-            my <span className="text-muted-foreground dark:text-white">projects</span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-center leading-[0.9] text-primary dark:text-white mb-6">
+            Projects
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light dark:text-white">
             Explore a collection of projects that showcase my skills and passion for building innovative solutions.
@@ -69,8 +69,7 @@ export default function Projects() {
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-blue-300 rounded-full mr-3"></div>
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <h2 className="text-2xl font-light text-foreground">
                     Theos Learning
                   </h2>
                 </div>
@@ -89,16 +88,16 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-light">
                   Node.js
                 </span>
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-light">
                   JavaScript
                 </span>
-                <span className="bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 px-3 py-1 rounded-full text-xs font-light">
                   Redis
                 </span>
-                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-light">
                   RESTful APIs
                 </span>
               </div>
@@ -115,8 +114,7 @@ export default function Projects() {
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-orange-400 rounded-full mr-3"></div>
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <h2 className="text-2xl font-light text-foreground">
                     Heatshield
                   </h2>
                 </div>
@@ -143,16 +141,16 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-light">
                   Swift
                 </span>
-                <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-light">
                   MapKit
                 </span>
-                <span className="bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-xs font-light">
                   CoreLocation
                 </span>
-                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-light">
                   OpenWeatherAPI
                 </span>
               </div>
@@ -169,8 +167,7 @@ export default function Projects() {
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <h2 className="text-2xl font-light text-foreground">
                     Cipheria Web
                   </h2>
                 </div>
@@ -195,19 +192,19 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-light">
                   React
                 </span>
-                <span className="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-light">
                   Astro
                 </span>
-                <span className="bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 px-3 py-1 rounded-full text-xs font-light">
                   Tailwind CSS
                 </span>
-                <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-light">
                   Firebase
                 </span>
-                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-light">
                   Responsive Design
                 </span>
               </div>
@@ -225,7 +222,7 @@ export default function Projects() {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <h2 className="text-2xl font-light text-foreground">
                     Opsight
                   </h2>
                 </div>
@@ -250,19 +247,19 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-light">
                   MLX
                 </span>
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-light">
                   Apple Foundation
                 </span>
-                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-light">
                   ARKit
                 </span>
-                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-light">
                   Swift
                 </span>
-                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-light">
                   YOLO
                 </span>
               </div>
@@ -280,7 +277,7 @@ export default function Projects() {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-yellow-700 rounded-full mr-3"></div>
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <h2 className="text-2xl font-light text-foreground">
                     Brew
                   </h2>
                 </div>
@@ -307,19 +304,19 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-orange-700/30 text-orange-500 dark:text-orange-300 px-3 py-1 rounded-full text-xs font-light">
                   Swift
                 </span>
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-light">
                   MapKit
                 </span>
-                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-3 py-1 rounded-full text-xs font-light">
                   FastAPI
                 </span>
-                <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-light">
                   Apple Foundation
                 </span>
-                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                <span className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-light">
                   CoreData
                 </span>
               </div>
@@ -336,13 +333,13 @@ export default function Projects() {
         >
           <div className="flex items-center justify-center mb-6">
             <Tag className="w-8 h-8 text-primary mr-3" />
-            <h2 className="text-2xl font-semibold text-foreground">
+            <h2 className="text-2xl font-light text-foreground">
               My Project Philosophy
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">
+              <h3 className="text-xl font-light text-foreground mb-4">
                 Purpose-Driven
               </h3>
               <p className="text-m text-muted-foreground font-open-sans">
@@ -351,7 +348,7 @@ export default function Projects() {
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">
+              <h3 className="text-xl font-light text-foreground mb-4">
                 Quality First
               </h3>
               <p className="text-m text-muted-foreground font-open-sans">
@@ -360,7 +357,7 @@ export default function Projects() {
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">
+              <h3 className="text-xl font-light text-foreground mb-4">
                 Continuous Learning
               </h3>
               <p className="text-m text-muted-foreground font-open-sans">
@@ -381,7 +378,7 @@ export default function Projects() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/"
-              className="bg-card border border-border text-foreground px-8 py-4 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium group"
+              className="bg-card border border-border text-foreground px-8 py-4 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-light group"
             >
               <div className="flex items-center justify-center">
                 <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[-4px] transition-transform" />
@@ -390,7 +387,7 @@ export default function Projects() {
             </Link>
             <Link
               href="/about"
-              className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-medium group"
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 font-light group"
             >
               <div className="flex items-center justify-center">
                 <span>About Me</span>

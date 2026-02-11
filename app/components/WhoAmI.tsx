@@ -11,7 +11,7 @@ export default function WhoAmI() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-8xl font-semibold tracking-tight text-foreground"
+            className="text-8xl font-light tracking-tight text-foreground"
           >
             Who Am I
           </motion.h3>

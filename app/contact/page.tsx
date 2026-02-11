@@ -33,12 +33,6 @@ export default function Contact() {
       label: "LinkedIn",
       value: "linkedin.com/in/luisbolaina",
       action: "https://linkedin.com/in/luisbolaina"
-    },
-    {
-      icon: MessageCircle,
-      label: "Discord",
-      value: "antonio#1234",
-      action: "#"
     }
   ]
 
@@ -101,32 +95,6 @@ export default function Contact() {
               <p className="text-lg font-mono text-foreground">{selectedMethod}</p>
             </div>
           )}
-
-          {/* Alternative Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-12">
-            {contactMethods.map((method) => (
-              <div 
-                key={method.value}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                onClick={() => {
-                  setSelectedMethod(method.value)
-                  if (method.action !== "#") {
-                    window.open(method.action, '_blank')
-                  }
-                }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                    <method.icon className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">{method.label}</h3>
-                    <p className="text-sm text-muted-foreground font-mono">{method.value}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </main>

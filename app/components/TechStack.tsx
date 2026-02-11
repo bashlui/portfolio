@@ -21,36 +21,19 @@ import {
   SiLinear
 } from "react-icons/si"
 
-const TechItem = ({ Icon, name, color }: { Icon: React.ComponentType<{ className: string; ref: React.Ref<SVGElement> }>; name: string; color: string }) => {
-  const iconRef = React.useRef<SVGElement>(null);
-
+const TechItem = ({ Icon, name }: { Icon: React.ComponentType<{ className: string }>; name: string }) => {
   return (
-    <div className="flex flex-col items-center gap-2 group cursor-pointer">
+    <div className="flex flex-col items-center gap-2">
       <div 
-        className="w-20 h-20 bg-muted/50 rounded-2xl flex items-center justify-center border border-border transition-all duration-300 dark:bg-muted/30"
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.borderColor = color;
-          (e.currentTarget as HTMLElement).style.backgroundColor = color + '15';
-          if (iconRef.current) {
-            iconRef.current.style.color = color;
-          }
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.borderColor = 'hsl(var(--border))';
-          (e.currentTarget as HTMLElement).style.backgroundColor = 'hsl(var(--muted))';
-          if (iconRef.current) {
-            iconRef.current.style.color = '';
-          }
-        }}
+        className="w-28 h-28 rounded-2xl flex items-center justify-center border border-border"
       >
         {Icon && (
           <Icon 
-            ref={iconRef}
-            className="w-10 h-10 transition-colors duration-300 text-foreground dark:text-white" 
+            className="w-16 h-16 text-foreground dark:text-white" 
           />
         )}
       </div>
-      <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">{name}</span>
+      <span className="text-sm font-light text-muted-foreground">{name}</span>
     </div>
   );
 };
@@ -87,7 +70,7 @@ export default function TechStack() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl font-semibold tracking-tight text-foreground"
+            className="text-6xl font-thin tracking-tight text-foreground"
           >
             Tech Stack
           </motion.h3>
@@ -109,7 +92,7 @@ export default function TechStack() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Coding Languages & Frameworks</h4>
+          <h4 className="text-2xl font-light text-foreground mb-8 text-center">Coding Languages & Frameworks</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
             {codinglanguages.map((tech) => (
               <TechItem key={tech.name} {...tech} />
@@ -124,7 +107,7 @@ export default function TechStack() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Tools & Services</h4>
+          <h4 className="text-2xl font-light text-foreground mb-8 text-center">Tools & Services</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
             {tools.map((tech) => (
               <TechItem key={tech.name} {...tech} />
@@ -139,7 +122,7 @@ export default function TechStack() {
           transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <h4 className="text-2xl font-semibold text-foreground mb-8 text-center">Team Organization</h4>
+          <h4 className="text-2xl font-light text-foreground mb-8 text-center">Team Organization</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 items-center justify-items-center">
             {teamOrganization.map((tech) => (
               <TechItem key={tech.name} {...tech} />
@@ -161,14 +144,14 @@ export default function TechStack() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-20 text-3xl md:text-4xl font-bold text-foreground max-w-3xl mx-auto leading-tight"
+            className="mb-20 text-3xl md:text-4xl font-semilight text-foreground max-w-3xl mx-auto leading-tight"
           >
             &quot;The only way to do great work is to love what you do.&quot;
           </motion.blockquote>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:antonio@example.com"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300"
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-light hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300"
             >
               Get in Touch
             </a>
@@ -176,7 +159,7 @@ export default function TechStack() {
               href="/Antonio_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-card border border-border text-foreground rounded-xl font-medium hover:bg-accent hover:-translate-y-1 transition-all duration-300"
+              className="px-8 py-3 bg-card border border-border text-foreground rounded-xl font-light hover:bg-accent hover:-translate-y-1 transition-all duration-300"
             >
               View Resume
             </a>
