@@ -1,81 +1,49 @@
-"use client"
-
-import { Github, Linkedin, Mail, MapPin, Calendar } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-muted border-t border-border mt-16">
-      <div className="max-w-6xl mx-auto py-8 px-6">
-        
-        {/* Top Section */}
-        <div className="flex flex-col md:flex-row items-center md:justify-between text-center md:text-left mb-8 gap-6">
-          <div className="flex-1">
-            <h3 className="text-2xl text-foreground mb-1">
-              antonio
-            </h3>
-            <p className="text-sm text-muted-foreground mb-3">
-              Computer Science Student & Developer
-            </p>
-            <div className="flex items-center justify-center md:justify-start text-xs text-muted-foreground space-x-3">
-              <div className="flex items-center">
-                <MapPin className="w-3 h-3 mr-1" />
-                <span>Monterrey, MX</span>
-              </div>
-              <div className="flex items-center">
-                <Calendar className="w-3 h-3 mr-1" />
-                <span>Available for opportunities</span>
-              </div>
+    <footer className="border-t border-border bg-background">
+      <div className="max-w-6xl mx-auto py-10 px-6">
+        <div className="flex flex-col md:flex-row items-start md:justify-between gap-8 mb-8">
+          <div>
+            <p className="text-sm font-bold text-foreground mb-1">antonio.</p>
+            <p className="text-xs text-muted-foreground mb-3">cs student &amp; software developer</p>
+            <div className="flex items-center text-xs text-muted-foreground gap-1.5">
+              <MapPin className="w-3 h-3 text-accent" />
+              <span>monterrey, mx</span>
             </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex space-x-3">
-            <Link 
-              href="https://github.com/bashlui" 
-              className="flex items-center justify-center w-9 h-9 bg-background border border-border rounded-lg text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:-translate-y-1"
-              aria-label="GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="w-4 h-4" />
-            </Link>
-            <Link 
-              href="https://www.linkedin.com/in/luisbolaina/" 
-              className="flex items-center justify-center w-9 h-9 bg-background border border-border rounded-lg text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:-translate-y-1"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="w-4 h-4" />
-            </Link>
-            <Link 
-              href="mailto:codewithlui@gmail.com" 
-              className="flex items-center justify-center w-9 h-9 bg-background border border-border rounded-lg text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:-translate-y-1"
-              aria-label="Email"
-            >
-              <Mail className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-
-          <div>
-            <p className="text-xs text-muted-foreground italic">
-              &quot;The only way to do great work is to love what you do.&quot; - Steve Jobs
-            </p>
+          <div className="flex gap-2">
+            {[
+              { href: "https://github.com/bashlui", label: "GitHub", Icon: Github },
+              { href: "https://www.linkedin.com/in/luisbolaina/", label: "LinkedIn", Icon: Linkedin },
+              { href: "mailto:thisisantonio_@outlook.com", label: "Email", Icon: Mail },
+            ].map(({ href, label, Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                className="flex items-center justify-center w-8 h-8 border border-border text-muted-foreground hover:border-accent hover:text-accent transition-colors"
+                aria-label={label}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                <Icon className="w-3.5 h-3.5" />
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-3 pt-6 border-t border-border">
-          <div>
-            <p className="text-xs text-muted-foreground">
-              © {currentYear} aNtonio. All rights reserved.
-            </p>
-          </div>
+        <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground">
+            &copy; {currentYear} antonio. all rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground opacity-50 italic">
+            &quot;The only way to do great work is to love what you do.&quot;
+          </p>
         </div>
       </div>
     </footer>

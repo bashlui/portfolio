@@ -1,59 +1,46 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import clsx from "clsx";
-import ThemeToggle from "./ThemeToggle"; // Assuming ThemeToggle exists or needs to be created/updated
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import clsx from "clsx"
+import ThemeToggle from "./ThemeToggle"
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
+  { name: "home", href: "/" },
+  { name: "projects", href: "/projects" },
+  { name: "about", href: "/about" },
+  { name: "contact", href: "/contact" },
+]
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-300",
-        isScrolled ? "py-4" : "py-6"
+        "fixed top-0 left-0 right-0 z-50 bg-background transition-colors duration-200",
+        isScrolled && "border-b border-border"
       )}
     >
-      <nav
-        className={clsx(
-          "relative flex items-center justify-between px-6 py-3 transition-all duration-300",
-          isScrolled
-            ? "w-full max-w-2xl rounded-full bg-white/70 shadow-lg backdrop-blur-xl border border-white/20 dark:bg-black/70 dark:border-white/10"
-            : "w-full max-w-5xl bg-transparent"
-        )}
-      >
-        {/* Logo */}
-        <Link href="/" className="text-xl tracking-tight text-primary dark:text-white">
+      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <Link href="/" className="text-sm font-bold tracking-wide text-foreground">
           antonio.
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-light text-muted-foreground transition-colors hover:text-foreground text-primary dark:text-white"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase"
             >
               {link.name}
             </Link>
@@ -61,42 +48,34 @@ export default function Navbar() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
-            <button
+          <ThemeToggle />
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-foreground focus:outline-none"
+            className="text-foreground"
             aria-label="Toggle menu"
-            >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+          >
+            {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+          </button>
         </div>
-
-        {/* Mobile Menu Dropdown */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 right-0 mt-4 mx-4 p-4 rounded-3xl bg-white/90 shadow-xl backdrop-blur-2xl border border-white/20 dark:bg-black/90 dark:border-white/10 md:hidden flex flex-col gap-4 text-center overflow-hidden"
-            >
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-light text-foreground py-2 hover:bg-muted/50 rounded-xl transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      {isMobileMenuOpen && (
+        <div className="border-b border-border bg-background md:hidden">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase py-1"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
-  );
+  )
 }

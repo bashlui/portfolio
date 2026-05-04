@@ -1,36 +1,39 @@
-"use client"
-
-import { motion } from "framer-motion"
-
 export default function WhoAmI() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-center mb-12">
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-8xl font-light tracking-tight text-foreground"
-          >
-            Who Am I
-          </motion.h3>
-        </div>
+    <section className="py-32 px-6 border-t border-border">
+      <div className="max-w-5xl mx-auto">
+        <p className="text-xs mb-6 tracking-widest uppercase">
+          <span className="text-accent font-bold">{'//'}</span>
+          <span className="text-muted-foreground"> who am i</span>
+        </p>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center"
-        >
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              I&apos;m a passionate Computer Science student at Tecnológico de Monterrey, 
-              dedicated to building innovative solutions through code. I thrive on turning 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.05]">
+              building things<br />
+              <span className="text-accent">that matter.</span>
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              I&apos;m a passionate Computer Science student at Tecnológico de Monterrey,
+              dedicated to building innovative solutions through code. I thrive on turning
               complex problems into elegant, user-friendly applications that make a real impact.
             </p>
           </div>
-        </motion.div>
+
+          <div className="grid grid-cols-2 gap-px border border-border bg-border">
+            {[
+              { value: "5+", label: "projects shipped" },
+              { value: "600+", label: "concurrent users" },
+              { value: "2+", label: "hackathons" },
+              { value: "∞", label: "lines of coffee" },
+            ].map(({ value, label }) => (
+              <div key={label} className="bg-background p-8 flex flex-col gap-2">
+                <span className="text-3xl font-bold text-accent">{value}</span>
+                <span className="text-xs text-muted-foreground tracking-wide">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

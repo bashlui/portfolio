@@ -1,102 +1,142 @@
 "use client"
 
 import { useState } from "react"
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-  DropdownMenuLabel
+  DropdownMenuLabel,
 } from "@/ui/dropdown-menu"
 import { Button } from "@/ui/button"
-import { Mail, Github, Linkedin, ChevronDown, MessageCircle } from "lucide-react"
+import { Mail, Github, Linkedin, ChevronDown } from "lucide-react"
+
+const contactMethods = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "thisisantonio_@outlook.com",
+    action: "mailto:thisisantonio_@outlook.com",
+    color: "text-indigo-500 dark:text-indigo-400",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "github.com/bashlui",
+    action: "https://github.com/bashlui",
+    color: "text-foreground",
+    bg: "bg-zinc-50 dark:bg-zinc-900/40",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/luisbolaina",
+    action: "https://linkedin.com/in/luisbolaina",
+    color: "text-blue-500 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-blue-950/40",
+  },
+]
 
 export default function Contact() {
   const [selectedMethod, setSelectedMethod] = useState("")
 
-  const contactMethods = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "thisisantonio_@outlook.com",
-      action: "mailto:thisisantonio_@outlook.com"
-    },
-    {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/bashlui",
-      action: "https://github.com/bashlui"
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "linkedin.com/in/luisbolaina",
-      action: "https://linkedin.com/in/luisbolaina"
-    }
-  ]
-
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-light mb-6">Get In Touch</h1>
-          <p className="text-lg text-muted-foreground mb-8">
-            I&apos;m always interested in hearing about new opportunities, collaborations, or just having a chat about technology.
+      <div className="max-w-4xl mx-auto px-6 py-20">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-xs mb-4 tracking-widest uppercase">
+            <span className="text-accent font-bold">{'//'}</span>
+            <span className="text-muted-foreground"> contact</span>
+          </p>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6">
+            get in touch.
+          </h1>
+          <p className="text-sm text-muted-foreground max-w-xl leading-relaxed">
+            Always interested in new opportunities, collaborations, or just having a chat about technology.
           </p>
         </div>
 
-        <div className="flex flex-col items-center space-y-8">
-          {/* Contact Method Selector */}
+        {/* Direct links */}
+        <div className="border border-border mb-0">
+          {contactMethods.map((method, i) => (
+            <a
+              key={method.value}
+              href={method.action}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-between px-8 py-6 hover:bg-muted transition-colors group ${i < contactMethods.length - 1 ? "border-b border-border" : ""}`}
+            >
+              <div className="flex items-center gap-5">
+                <div className={`w-10 h-10 ${method.bg} flex items-center justify-center shrink-0`}>
+                  <method.icon className={`w-5 h-5 ${method.color}`} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-foreground tracking-widest uppercase mb-0.5">{method.label}</p>
+                  <p className="text-xs text-muted-foreground">{method.value}</p>
+                </div>
+              </div>
+              <ChevronDown className="w-4 h-4 text-muted-foreground -rotate-90 group-hover:text-accent transition-colors shrink-0" />
+            </a>
+          ))}
+        </div>
+
+        {/* Dropdown */}
+        <div className="border border-border border-t-0 p-8">
+          <p className="text-[10px] text-muted-foreground tracking-widest uppercase mb-6">or select via dropdown</p>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="min-w-[200px] justify-between">
+              <Button
+                variant="outline"
+                className="min-w-[200px] justify-between border-border text-foreground hover:bg-muted text-xs tracking-wider uppercase"
+              >
                 <span className="flex items-center gap-2">
                   {selectedMethod ? (
                     <>
                       {(() => {
-                        const method = contactMethods.find(m => m.value === selectedMethod)
-                        return method ? <method.icon className="w-4 h-4" /> : null
+                        const m = contactMethods.find((x) => x.value === selectedMethod)
+                        return m ? <m.icon className={`w-3.5 h-3.5 ${m.color}`} /> : null
                       })()}
-                      {contactMethods.find(m => m.value === selectedMethod)?.label}
+                      {contactMethods.find((m) => m.value === selectedMethod)?.label}
                     </>
                   ) : (
-                    "Choose contact method"
+                    "select method"
                   )}
                 </span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[200px]">
-              <DropdownMenuLabel>Contact Methods</DropdownMenuLabel>
-              <DropdownMenuSeparator />
+            <DropdownMenuContent className="w-[200px] border-border bg-background text-foreground">
+              <DropdownMenuLabel className="text-[10px] text-muted-foreground tracking-widest uppercase">
+                contact methods
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator className="bg-border" />
               {contactMethods.map((method) => (
-                <DropdownMenuItem 
+                <DropdownMenuItem
                   key={method.value}
                   onClick={() => {
                     setSelectedMethod(method.value)
-                    if (method.action !== "#") {
-                      window.open(method.action, '_blank')
-                    }
+                    window.open(method.action, "_blank")
                   }}
-                  className="flex items-center gap-2 cursor-pointer"
+                  className="flex items-center gap-2 cursor-pointer text-xs text-foreground hover:bg-muted"
                 >
-                  <method.icon className="w-4 h-4" />
+                  <method.icon className={`w-3.5 h-3.5 ${method.color}`} />
                   <span>{method.label}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* Selected Contact Display */}
           {selectedMethod && (
-            <div className="bg-card border border-border rounded-xl p-6 text-center animate-in fade-in duration-300">
-              <p className="text-sm text-muted-foreground mb-2">Selected Contact:</p>
-              <p className="text-lg font-mono text-foreground">{selectedMethod}</p>
+            <div className="mt-6 pt-6 border-t border-border">
+              <p className="text-[10px] text-muted-foreground tracking-widest uppercase mb-2">selected</p>
+              <p className="text-sm text-accent font-bold">{selectedMethod}</p>
             </div>
           )}
         </div>
-      </section>
+      </div>
     </main>
   )
 }

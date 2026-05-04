@@ -1,32 +1,52 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import Link from "next/link"
+import GlobeLoader from "./GlobeLoader"
 
 export default function Hero() {
-
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-foreground">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-background text-foreground overflow-hidden px-4">
 
-      <div className="z-10 text-center px-4 md:px-6 max-w-5xl mx-auto space-y-8 flex flex-col items-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-8xl lg:text-9xl font-thin tracking-tight text-center leading-[0.9] text-primary dark:text-white drop-shadow-lg"
-        >
-          hi, I&apos;m antonio <br className="hidden md:block" />
-          <span className="text-muted-foreground dark:text-white"></span>
-        </motion.h1>
+      {/* Subtle indigo glow behind globe */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[480px] h-[480px] rounded-full bg-indigo-500/6 dark:bg-indigo-500/10 blur-3xl" />
+      </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light dark:text-white drop-shadow-md"
-        >
-          welcome to my portfolio
-        </motion.p>
+      {/* Globe */}
+      <div className="mb-10 relative z-10">
+        <GlobeLoader fontSize={11} speed={40} />
+      </div>
+
+      {/* Identity */}
+      <div className="text-center space-y-2 relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+          antonio.
+        </h1>
+        <p className="text-sm md:text-base text-muted-foreground">
+          <span className="text-accent font-bold">{'//'} </span>cs student &amp; software developer
+        </p>
+        <p className="text-xs text-muted-foreground opacity-50 tracking-widest">
+          monterrey, mx
+        </p>
+
+        {/* CTAs */}
+        <div className="flex gap-3 justify-center pt-5">
+          <Link
+            href="/projects"
+            className="inline-block px-7 py-2.5 bg-accent text-accent-foreground hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors text-xs tracking-widest uppercase font-bold"
+          >
+            projects
+          </Link>
+          <a
+            href="/Antonio_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-7 py-2.5 border border-border text-muted-foreground hover:border-foreground hover:text-foreground transition-colors text-xs tracking-widest uppercase"
+          >
+            resume
+          </a>
+        </div>
       </div>
     </section>
-  );
+  )
 }
