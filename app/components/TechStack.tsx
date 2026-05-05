@@ -38,7 +38,7 @@ function TechItem({
 }) {
   return (
     <div className="flex flex-col items-center gap-2.5 group">
-      <div className="w-16 h-16 flex items-center justify-center border border-border hover:border-accent transition-colors">
+      <div className="w-16 h-16 rounded-xl bg-card flex items-center justify-center hover:bg-muted transition-colors">
         <Icon
           className="w-8 h-8"
           style={{ color: color || "var(--foreground)" }}
@@ -57,9 +57,8 @@ export default function TechStack() {
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-16">
-          <p className="text-xs mb-4 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> tech stack</span>
+          <p className="text-xs mb-4 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> tech stack
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
             tools of the trade.
@@ -104,7 +103,7 @@ export default function TechStack() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="mailto:thisisantonio_@outlook.com"
-              className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors text-xs tracking-widest uppercase font-bold"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-foreground text-background hover:bg-foreground/80 transition-colors text-sm font-medium"
             >
               get in touch
             </a>
@@ -112,7 +111,7 @@ export default function TechStack() {
               href="/Antonio_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-border text-muted-foreground hover:border-foreground hover:text-foreground transition-colors text-xs tracking-widest uppercase"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-border text-muted-foreground hover:bg-muted hover:text-foreground transition-colors text-sm"
             >
               view resume
             </a>

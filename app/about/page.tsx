@@ -47,9 +47,8 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Header */}
         <div className="mb-20">
-          <p className="text-xs mb-4 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> about</span>
+          <p className="text-xs mb-4 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> about
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6">
             get to know me.
@@ -61,10 +60,10 @@ export default function About() {
         </div>
 
         {/* Background + photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px border border-border bg-border mb-px">
-          <div className="bg-background p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+          <div className="rounded-xl bg-card p-10">
             <div className="flex items-center gap-3 mb-6">
-              <MapPin className="w-5 h-5 text-accent" />
+              <MapPin className="w-5 h-5 text-muted-foreground" />
               <h2 className="text-sm font-bold tracking-widest uppercase text-foreground">background</h2>
             </div>
             <div className="space-y-5 text-sm text-muted-foreground leading-relaxed">
@@ -80,8 +79,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bg-background p-10 flex flex-col items-center justify-center text-center">
-            <div className="w-40 h-40 border border-border overflow-hidden mb-5">
+          <div className="rounded-xl bg-card p-10 flex flex-col items-center justify-center text-center">
+            <div className="w-40 h-40 rounded-2xl overflow-hidden mb-5">
               <Image
                 src="/ntonio.jpeg"
                 alt="Antonio"
@@ -99,10 +98,9 @@ export default function About() {
         </div>
 
         {/* Experience */}
-        <div className="border border-border border-t-0 p-10 mb-px">
-          <p className="text-xs mb-8 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> team experience &amp; leadership</span>
+        <div className="rounded-xl bg-card p-10 mb-4">
+          <p className="text-xs mb-8 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> team experience &amp; leadership
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {experienceItems.map(({ title, body }) => (
@@ -115,15 +113,14 @@ export default function About() {
         </div>
 
         {/* Approach */}
-        <div className="border border-border border-t-0 p-10 mb-16">
-          <p className="text-xs mb-8 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> my approach</span>
+        <div className="rounded-xl bg-card p-10 mb-16">
+          <p className="text-xs mb-8 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> my approach
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {approachItems.map(({ icon: Icon, color, bg, title, body }) => (
               <div key={title}>
-                <div className={`w-12 h-12 ${bg} flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center mb-4`}>
                   <Icon className={`w-6 h-6 ${color}`} />
                 </div>
                 <h3 className="text-sm font-bold text-foreground mb-2 tracking-wide">{title}</h3>
@@ -137,13 +134,13 @@ export default function About() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/"
-            className="flex items-center justify-center gap-2 border border-border text-muted-foreground hover:border-foreground hover:text-foreground px-8 py-3 text-xs tracking-widest uppercase transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full border border-border text-muted-foreground hover:bg-muted hover:text-foreground px-8 py-3 text-sm transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> home
           </Link>
           <Link
             href="/projects"
-            className="flex items-center justify-center gap-2 bg-accent text-accent-foreground hover:bg-indigo-600 dark:hover:bg-indigo-500 px-8 py-3 text-xs tracking-widest uppercase font-bold transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full bg-foreground text-background hover:bg-foreground/80 px-8 py-3 text-sm font-medium transition-colors"
           >
             projects <ArrowRight className="w-3.5 h-3.5" />
           </Link>

@@ -12,7 +12,7 @@ export default function Footer() {
             <p className="text-sm font-bold text-foreground mb-1">antonio.</p>
             <p className="text-xs text-muted-foreground mb-3">cs student &amp; software developer</p>
             <div className="flex items-center text-xs text-muted-foreground gap-1.5">
-              <MapPin className="w-3 h-3 text-accent" />
+              <MapPin className="w-3 h-3" />
               <span>monterrey, mx</span>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
-                className="flex items-center justify-center w-8 h-8 border border-border text-muted-foreground hover:border-accent hover:text-accent transition-colors"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-card text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                 aria-label={label}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -41,7 +41,7 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             &copy; {currentYear} antonio. all rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground opacity-50 italic">
+          <p className="text-xs text-muted-foreground/40 italic">
             &quot;The only way to do great work is to love what you do.&quot;
           </p>
         </div>

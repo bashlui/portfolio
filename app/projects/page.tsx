@@ -29,7 +29,7 @@ const defaultTag = "bg-zinc-50 text-zinc-600 border-zinc-200 dark:bg-zinc-900/40
 
 function Tag({ label }: { label: string }) {
   return (
-    <span className={`border px-2 py-0.5 text-[10px] font-medium tracking-wide ${tagColors[label] ?? defaultTag}`}>
+    <span className={`border rounded-full px-3 py-0.5 text-[10px] font-medium tracking-wide ${tagColors[label] ?? defaultTag}`}>
       {label}
     </span>
   )
@@ -79,9 +79,8 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Header */}
         <div className="mb-20">
-          <p className="text-xs mb-4 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> projects</span>
+          <p className="text-xs mb-4 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> projects
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-4">work.</h1>
           <p className="text-sm text-muted-foreground max-w-xl">
@@ -112,7 +111,7 @@ export default function Projects() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 border border-border text-muted-foreground hover:border-accent hover:text-accent px-3 py-1.5 text-[10px] tracking-wider uppercase transition-colors"
+                        className="flex items-center gap-1.5 rounded-full border border-border text-muted-foreground hover:border-foreground hover:text-foreground px-4 py-1.5 text-[10px] tracking-wider uppercase transition-colors"
                       >
                         <link.Icon className="w-3 h-3" />
                         {link.label}
@@ -132,10 +131,9 @@ export default function Projects() {
         </div>
 
         {/* Philosophy */}
-        <div className="border border-border p-10 mb-16">
-          <p className="text-xs mb-8 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> philosophy</span>
+        <div className="rounded-xl bg-card p-10 mb-16">
+          <p className="text-xs mb-8 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> philosophy
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
@@ -155,13 +153,13 @@ export default function Projects() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/"
-            className="flex items-center justify-center gap-2 border border-border text-muted-foreground hover:border-foreground hover:text-foreground px-8 py-3 text-xs tracking-widest uppercase transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full border border-border text-muted-foreground hover:bg-muted hover:text-foreground px-8 py-3 text-sm transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> home
           </Link>
           <Link
             href="/about"
-            className="flex items-center justify-center gap-2 bg-accent text-accent-foreground hover:bg-indigo-600 dark:hover:bg-indigo-500 px-8 py-3 text-xs tracking-widest uppercase font-bold transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full bg-foreground text-background hover:bg-foreground/80 px-8 py-3 text-sm font-medium transition-colors"
           >
             about <ArrowRight className="w-3.5 h-3.5" />
           </Link>

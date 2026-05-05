@@ -27,7 +27,7 @@ const contactMethods = [
     value: "github.com/bashlui",
     action: "https://github.com/bashlui",
     color: "text-foreground",
-    bg: "bg-zinc-50 dark:bg-zinc-900/40",
+    bg: "bg-card",
   },
   {
     icon: Linkedin,
@@ -47,9 +47,8 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-xs mb-4 tracking-widest uppercase">
-            <span className="text-accent font-bold">{'//'}</span>
-            <span className="text-muted-foreground"> contact</span>
+          <p className="text-xs mb-4 tracking-widest uppercase text-muted-foreground">
+            <span className="text-foreground font-bold">{'//'}</span> contact
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6">
             get in touch.
@@ -60,7 +59,7 @@ export default function Contact() {
         </div>
 
         {/* Direct links */}
-        <div className="border border-border mb-0">
+        <div className="rounded-xl bg-card overflow-hidden mb-4">
           {contactMethods.map((method, i) => (
             <a
               key={method.value}
@@ -70,7 +69,7 @@ export default function Contact() {
               className={`flex items-center justify-between px-8 py-6 hover:bg-muted transition-colors group ${i < contactMethods.length - 1 ? "border-b border-border" : ""}`}
             >
               <div className="flex items-center gap-5">
-                <div className={`w-10 h-10 ${method.bg} flex items-center justify-center shrink-0`}>
+                <div className={`w-10 h-10 rounded-xl ${method.bg} flex items-center justify-center shrink-0`}>
                   <method.icon className={`w-5 h-5 ${method.color}`} />
                 </div>
                 <div>
@@ -78,19 +77,19 @@ export default function Contact() {
                   <p className="text-xs text-muted-foreground">{method.value}</p>
                 </div>
               </div>
-              <ChevronDown className="w-4 h-4 text-muted-foreground -rotate-90 group-hover:text-accent transition-colors shrink-0" />
+              <ChevronDown className="w-4 h-4 text-muted-foreground -rotate-90 group-hover:text-foreground transition-colors shrink-0" />
             </a>
           ))}
         </div>
 
         {/* Dropdown */}
-        <div className="border border-border border-t-0 p-8">
+        <div className="rounded-xl bg-card p-8">
           <p className="text-[10px] text-muted-foreground tracking-widest uppercase mb-6">or select via dropdown</p>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="min-w-[200px] justify-between border-border text-foreground hover:bg-muted text-xs tracking-wider uppercase"
+                className="min-w-[200px] justify-between rounded-full border-border text-foreground hover:bg-muted text-xs tracking-wider uppercase"
               >
                 <span className="flex items-center gap-2">
                   {selectedMethod ? (
@@ -108,7 +107,7 @@ export default function Contact() {
                 <ChevronDown className="w-3.5 h-3.5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[200px] border-border bg-background text-foreground">
+            <DropdownMenuContent className="w-[200px] rounded-xl border-border bg-background text-foreground">
               <DropdownMenuLabel className="text-[10px] text-muted-foreground tracking-widest uppercase">
                 contact methods
               </DropdownMenuLabel>
@@ -120,7 +119,7 @@ export default function Contact() {
                     setSelectedMethod(method.value)
                     window.open(method.action, "_blank")
                   }}
-                  className="flex items-center gap-2 cursor-pointer text-xs text-foreground hover:bg-muted"
+                  className="flex items-center gap-2 cursor-pointer text-xs text-foreground hover:bg-muted rounded-lg"
                 >
                   <method.icon className={`w-3.5 h-3.5 ${method.color}`} />
                   <span>{method.label}</span>
@@ -132,7 +131,7 @@ export default function Contact() {
           {selectedMethod && (
             <div className="mt-6 pt-6 border-t border-border">
               <p className="text-[10px] text-muted-foreground tracking-widest uppercase mb-2">selected</p>
-              <p className="text-sm text-accent font-bold">{selectedMethod}</p>
+              <p className="text-sm text-foreground font-bold">{selectedMethod}</p>
             </div>
           )}
         </div>

@@ -35,12 +35,12 @@ export default function Navbar() {
           antonio.
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase"
+              className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors"
             >
               {link.name}
             </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase py-1"
+                className="text-sm text-muted-foreground hover:text-foreground hover:underline transition-colors py-1"
               >
                 {link.name}
               </Link>
