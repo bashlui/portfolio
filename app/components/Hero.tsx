@@ -1,24 +1,31 @@
 "use client"
 
 import Link from "next/link"
+import { motion } from "framer-motion"
 import GlobeLoader from "./GlobeLoader"
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-background text-foreground overflow-hidden px-4">
-
-      {/* Subtle glow behind globe */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[480px] h-[480px] rounded-full bg-foreground/[0.03] blur-3xl" />
+        <div className="w-[400px] h-[400px] rounded-full bg-foreground/[0.02] blur-3xl" />
       </div>
 
-      {/* Globe */}
-      <div className="mb-10 relative z-10">
+      <motion.div
+        className="mb-8 relative z-10"
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <GlobeLoader fontSize={11} speed={40} />
-      </div>
+      </motion.div>
 
-      {/* Identity */}
-      <div className="text-center space-y-3 relative z-10">
+      <motion.div
+        className="text-center space-y-3 relative z-10"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
           antonio.
         </h1>
@@ -29,7 +36,6 @@ export default function Hero() {
           monterrey, mx
         </p>
 
-        {/* CTAs */}
         <div className="flex gap-3 justify-center pt-6">
           <Link
             href="/projects"
@@ -46,7 +52,7 @@ export default function Hero() {
             resume
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
