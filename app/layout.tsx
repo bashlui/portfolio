@@ -1,21 +1,35 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./context/ThemeContext";
-import Navbar from "./components/Navbar";
-import SmoothScroll from "./components/SmoothScroll";
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ntonio.vercel.app"),
   title: "antonio",
-  description: "portfolio",
+  description: "Explore Antonio's work, skills, and background through an interactive developer terminal portfolio.",
+  openGraph: {
+    title: "antonio",
+    description: "An interactive terminal portfolio for a software engineer with an eye for detail.",
+    url: "https://ntonio.vercel.app",
+    siteName: "Antonio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "antonio",
+    description: "An interactive terminal portfolio for a software engineer with an eye for detail.",
+  },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/terminal.svg", type: "image/svg+xml" }],
   },
 };
 
@@ -26,16 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsMono.variable} antialiased`}>
-        <ThemeProvider>
-          <SmoothScroll>
-            <Navbar />
-            <div className="pt-16">
-              {children}
-            </div>
-          </SmoothScroll>
-        </ThemeProvider>
-      </body>
+      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }

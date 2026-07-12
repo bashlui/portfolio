@@ -1,15 +1,5 @@
-import Hero from "./components/Hero"
-import WhoAmI from "./components/WhoAmI"
-import TechStack from "./components/TechStack"
-import Footer from "./components/Footer"
+import TerminalPortfolio from "./components/TerminalPortfolio"
 
 export default function Page() {
-  return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Hero />
-      <WhoAmI />
-      <TechStack />
-      <Footer />
-    </main>
-  )
+  return <TerminalPortfolio />
 }
