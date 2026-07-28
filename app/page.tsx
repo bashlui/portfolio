@@ -1,5 +1,5 @@
-import TerminalPortfolio from "./components/TerminalPortfolio"
+import Portfolio from "./components/Portfolio"
 
 export default function Page() {
-  return <TerminalPortfolio />
+  return <Portfolio />
 }

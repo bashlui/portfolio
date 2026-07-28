@@ -14,22 +14,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ntonio.vercel.app"),
-  title: "antonio",
-  description: "Explore Antonio's work, skills, and background through an interactive developer terminal portfolio.",
+  title: "Antonio — Software Engineer",
+  description: "Antonio is a software engineer building thoughtful digital products, AI systems, and native experiences.",
   openGraph: {
-    title: "antonio",
-    description: "An interactive terminal portfolio for a software engineer with an eye for detail.",
+    title: "Antonio — Software Engineer",
+    description: "Thoughtful digital products, AI systems, and native experiences.",
     url: "https://ntonio.vercel.app",
     siteName: "Antonio",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "antonio",
-    description: "An interactive terminal portfolio for a software engineer with an eye for detail.",
-  },
-  icons: {
-    icon: [{ url: "/terminal.svg", type: "image/svg+xml" }],
+    title: "Antonio — Software Engineer",
+    description: "Thoughtful digital products, AI systems, and native experiences.",
   },
 };
 
