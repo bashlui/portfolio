@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 
 const STORAGE_KEY = "antonio-welcome"
-const INTRO_MS = 2400
-const REVEAL_MS = 900
+const INTRO_MS = 1800
+const REVEAL_MS = 700
 
 type IntroState = "playing" | "revealing" | "done"
 
@@ -57,10 +57,6 @@ export default function WelcomeIntro({ onComplete }: WelcomeIntroProps) {
     document.body.style.removeProperty("overflow")
   }
 
-  function skip() {
-    finish()
-  }
-
   useEffect(() => {
     if (shouldSkipIntro()) {
       finish()
@@ -87,7 +83,7 @@ export default function WelcomeIntro({ onComplete }: WelcomeIntroProps) {
       if (event.key === "Escape") {
         window.clearTimeout(revealTimer)
         window.clearTimeout(doneTimer)
-        skip()
+        finish()
       }
     }
 
@@ -114,24 +110,8 @@ export default function WelcomeIntro({ onComplete }: WelcomeIntroProps) {
       aria-label="Welcome"
       aria-modal="true"
     >
-      <div className="welcome-intro__atmosphere" aria-hidden="true">
-        <span className="welcome-intro__glow" />
-        <span className="welcome-intro__grain" />
-        <span className="welcome-intro__drop" />
-        <span className="welcome-intro__ripple welcome-intro__ripple--one" />
-        <span className="welcome-intro__ripple welcome-intro__ripple--two" />
-        <span className="welcome-intro__ripple welcome-intro__ripple--three" />
-        <span className="welcome-intro__ripple welcome-intro__ripple--four" />
-      </div>
-
-      <div className="welcome-intro__copy">
-        <p className="welcome-intro__kicker">Antonio Bolaina</p>
-        <p className="welcome-intro__title">
-          Welcome<em>!</em>
-        </p>
-      </div>
-
-      <button className="welcome-intro__skip" type="button" onClick={skip}>
+      <p className="welcome-intro__title">Welcome</p>
+      <button className="welcome-intro__skip" type="button" onClick={finish}>
         Skip
       </button>
     </div>

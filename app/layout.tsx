@@ -45,7 +45,7 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <style>{`.welcome-intro{display:none!important}.identity-copy>*,.portrait-wrap{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
+          <style>{`.welcome-intro{display:none!important}.hero>*,.site-header{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
         </noscript>
         {children}
       </body>
