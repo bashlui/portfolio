@@ -290,9 +290,10 @@ footer {
   z-index: 80;
   inset: 0;
   display: grid;
-  place-items: center;
-  background: var(--background);
-  color: var(--foreground);
+  align-items: center;
+  overflow: hidden;
+  background: #0b1216;
+  color: #f7f7f4;
 }
 
 html.welcome-seen .welcome-intro {
@@ -307,22 +308,85 @@ html.welcome-seen {
   overflow: auto;
 }
 
+.welcome-intro__scene,
+.welcome-intro__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.welcome-intro__scene {
+  opacity: 0;
+  animation: welcome-fade 700ms ease-out forwards;
+}
+
+.welcome-intro__frame {
+  z-index: 1;
+}
+
+.welcome-intro__frame line,
+.welcome-intro__orb {
+  fill: none;
+  stroke: rgba(247, 247, 244, 0.16);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.welcome-intro__orb {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: welcome-orb 2.4s ease-out forwards;
+}
+
+.welcome-intro__copy {
+  position: relative;
+  z-index: 2;
+  max-width: 22rem;
+  margin-left: clamp(1.5rem, 10vw, 8rem);
+  opacity: 0;
+  animation: welcome-fade 700ms ease-out 500ms forwards;
+}
+
+.welcome-intro__copy.is-in {
+  opacity: 1;
+}
+
+.welcome-intro__kicker {
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .welcome-intro__title {
   margin: 0;
-  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
   font-weight: 450;
-  letter-spacing: -0.05em;
-  animation: welcome-in 900ms ease both;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.welcome-intro__lede {
+  max-width: 22rem;
+  margin: 1.1rem 0 0;
+  color: rgba(247, 247, 244, 0.78);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .welcome-intro__skip {
   position: absolute;
   right: 1.25rem;
   bottom: 1.25rem;
+  z-index: 2;
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--faint);
+  color: rgba(247, 247, 244, 0.48);
   cursor: pointer;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.68rem;
@@ -331,11 +395,15 @@ html.welcome-seen {
 }
 
 .welcome-intro__skip:hover {
-  color: var(--foreground);
+  color: #f7f7f4;
 }
 
 .welcome-intro--revealing {
-  animation: welcome-out 700ms ease forwards;
+  animation: welcome-out 800ms ease-out forwards;
+}
+
+.welcome-intro--revealing .welcome-intro__copy {
+  opacity: 0;
 }
 
 .hero > *,
@@ -376,13 +444,19 @@ html.welcome-seen .site-header {
   animation: none !important;
 }
 
-@keyframes welcome-in {
+@keyframes welcome-fade {
   from {
     opacity: 0;
   }
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes welcome-orb {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
