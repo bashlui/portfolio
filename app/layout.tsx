@@ -36,8 +36,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{if(sessionStorage.getItem("antonio-welcome")==="1"||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("welcome-seen")}catch(e){}',
+          }}
+        />
+        <noscript>
+          <style>{`.welcome-intro{display:none!important}.identity-copy>*,.portrait-wrap{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }

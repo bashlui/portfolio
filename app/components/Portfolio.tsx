@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import type { CSSProperties } from "react"
+import { useEffect, useState, type CSSProperties } from "react"
 import {
   ArrowUpRight,
   Bot,
@@ -30,6 +30,7 @@ import {
 } from "simple-icons"
 import { projects } from "../data/projects"
 import SpotlightCard from "./react-bits/SpotlightCard"
+import WelcomeIntro from "./WelcomeIntro"
 
 type Tool = {
   label: string
@@ -88,10 +89,19 @@ function BrandIcon({ tool, compact = false }: { tool: Tool; compact?: boolean })
 
 export default function Portfolio() {
   const featuredProjects = projects.filter((project) => project.featured)
+  const [entered, setEntered] = useState(false)
+
+  useEffect(() => {
+    if (document.documentElement.classList.contains("welcome-seen")) {
+      setEntered(true)
+    }
+  }, [])
 
   return (
-    <main className="minimal-page">
-      <article className="portfolio-sheet">
+    <>
+      <WelcomeIntro onComplete={() => setEntered(true)} />
+      <main className={`minimal-page${entered ? " is-entered" : ""}`}>
+        <article className="portfolio-sheet">
         <section className="identity-hero" aria-labelledby="intro-title">
           <div className="identity-copy">
             <p className="availability">
@@ -274,6 +284,7 @@ export default function Portfolio() {
           <span>Monterrey, MX · © {new Date().getFullYear()}</span>
         </footer>
       </article>
-    </main>
+      </main>
+    </>
   )
 }
