@@ -802,8 +802,10 @@ html.welcome-seen .portrait-wrap {
     position: relative;
     top: auto;
     right: auto;
+    order: -1;
     width: 132px;
     align-self: flex-end;
+    margin-bottom: 0.35rem;
   }
 
   .hero-copy {
