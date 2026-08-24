@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -10,6 +10,13 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} ${instrument.variable} antialiased`}>
         <script
           dangerouslySetInnerHTML={{
             __html:
@@ -45,7 +52,7 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <style>{`.welcome-intro{display:none!important}.hero>*,.site-header{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
+          <style>{`.welcome-intro{display:none!important}.site-header,.hero-copy,.portrait-wrap{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
         </noscript>
         {children}
       </body>

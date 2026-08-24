@@ -90,6 +90,7 @@ export default function WelcomeIntro({ onComplete }: WelcomeIntroProps) {
     const doneTimer = window.setTimeout(() => {
       persistIntro()
       completed.current = true
+      document.documentElement.classList.add("welcome-seen")
       setState("done")
       document.body.style.removeProperty("overflow")
     }, INTRO_MS + REVEAL_MS)
