@@ -38,8 +38,13 @@ const projectColors: Record<string, string> = {
 }
 
 function projectMark(title: string) {
-  return title
-    .split(" ")
+  const words = title.split(" ").filter(Boolean)
+
+  if (words.length === 1) {
+    return title.slice(0, 2)
+  }
+
+  return words
     .map((word) => word[0])
     .join("")
     .slice(0, 2)

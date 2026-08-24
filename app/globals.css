@@ -793,23 +793,25 @@ html.welcome-seen .portrait-wrap {
   }
 
   .hero {
-    display: block;
-    padding: 1.4rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.35rem 0 1.5rem;
+  }
+
+  .portrait-wrap {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 132px;
+    align-self: flex-end;
   }
 
   .hero-copy {
-    padding-top: 8.4rem;
+    padding-top: 1.15rem;
   }
 
   .hero h1 {
     font-size: clamp(2.35rem, 12vw, 3.2rem);
-  }
-
-  .portrait-wrap {
-    position: absolute;
-    top: 5.4rem;
-    right: 1.1rem;
-    width: 126px;
   }
 
   .portrait-location {
