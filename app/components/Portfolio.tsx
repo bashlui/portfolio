@@ -1,18 +1,4 @@
-"use client"
-
-import Image from "next/image"
-import type { CSSProperties } from "react"
-import { useEffect, useState } from "react"
-import {
-  ArrowUpRight,
-  FileText,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-} from "lucide-react"
 import { projects } from "../data/projects"
-import WelcomeIntro from "./WelcomeIntro"
 
 const aiTools = ["ChatGPT", "Claude Code", "Cursor", "OpenCode", "MCP"]
 
@@ -29,236 +15,144 @@ const stack = [
   "Figma",
 ]
 
-const projectColors: Record<string, string> = {
-  opsight: "#5f7869",
-  "theos-learning": "#76658c",
-  brew: "#936c54",
-  heatshield: "#5d7384",
-  cipheria: "#8a5a4a",
-}
-
-function projectMark(title: string) {
-  const words = title.split(" ").filter(Boolean)
-
-  if (words.length === 1) {
-    return title.slice(0, 2)
-  }
-
-  return words
-    .map((word) => word[0])
-    .join("")
-    .slice(0, 2)
-}
-
 export default function Portfolio() {
-  const [entered, setEntered] = useState(false)
-
-  useEffect(() => {
-    if (document.documentElement.classList.contains("welcome-seen")) {
-      setEntered(true)
-    }
-  }, [])
-
   return (
-    <>
-      <WelcomeIntro onComplete={() => setEntered(true)} />
-      <main className={`page${entered ? " is-entered" : ""}`}>
-        <header className="site-header">
-          <a className="site-mark" href="#top">
-            Antonio
-          </a>
-          <nav aria-label="Sections">
-            <a href="#work">Work</a>
-            <a href="#tools">Toolkit</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </header>
+    <main className="page" id="top">
+      <header className="site-header">
+        <a className="site-mark" href="#top" aria-label="Antonio Bolaina, home">
+          Antonio Bolaina
+        </a>
+        <nav aria-label="Sections">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-        <article id="top">
-          <section className="hero" aria-labelledby="intro-title">
-            <div className="hero-copy">
-              <p className="availability">
-                <span aria-hidden="true" />
-                Available for thoughtful work
-              </p>
-              <p className="identity-role">Software &amp; product engineering</p>
-              <h1 id="intro-title">
-                Design-minded engineering for{" "}
-                <em>useful products.</em>
-              </h1>
-              <p className="lede">
-                I&apos;m Antonio, a Computer Science student and software engineer
-                turning ambitious ideas into clear digital experiences across web,
-                AI, and Apple platforms.
-              </p>
-              <div className="identity-actions" aria-label="Profile links">
-                <a
-                  className="btn btn--primary"
-                  href="https://github.com/bashlui"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Github aria-hidden="true" />
-                  GitHub
-                </a>
-                <a
-                  className="btn"
-                  href="https://www.linkedin.com/in/luisbolaina/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Linkedin aria-hidden="true" />
-                  LinkedIn
-                </a>
-                <a
-                  className="btn"
-                  href="/Antonio_Resume.pdf"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <FileText aria-hidden="true" />
-                  Résumé
-                </a>
-              </div>
-            </div>
+      <section className="hero" aria-labelledby="intro-title">
+        <p className="eyebrow">Software engineer · Monterrey, Mexico</p>
+        <h1 id="intro-title">I build clear, useful digital products.</h1>
+        <p className="lede">
+          I&apos;m Antonio, a Computer Science student working across web, AI,
+          and Apple platforms. I care about thoughtful systems, direct
+          interfaces, and technology that earns its place.
+        </p>
 
-            <div className="portrait-wrap">
-              <div className="portrait">
-                <Image
-                  alt="Illustrated portrait of Antonio"
-                  className="portrait-image"
-                  fill
-                  priority
-                  sizes="(max-width: 620px) 132px, 196px"
-                  src="/antonio-notion-face.png"
-                />
-              </div>
-              <p className="portrait-location">
-                <MapPin aria-hidden="true" />
-                Monterrey, MX
-              </p>
-            </div>
-          </section>
-
-          <section className="section" id="work" aria-labelledby="work-title">
-            <div className="section-head">
-              <h2 id="work-title">Selected work</h2>
-              <p>Things I&apos;ve designed and engineered end to end.</p>
-            </div>
-
-            <ul className="project-grid">
-              {projects.map((project, index) => {
-                const link = project.links[0]
-
-                return (
-                  <li
-                    className={`project-card${index === 0 ? " project-card--lead" : ""}`}
-                    id={project.slug}
-                    key={project.slug}
-                  >
-                    <div className="project-card__top">
-                      <div
-                        className="project-card__mark"
-                        style={
-                          {
-                            "--project-color":
-                              projectColors[project.slug] ?? "#5f7869",
-                          } as CSSProperties
-                        }
-                        aria-hidden="true"
-                      >
-                        {projectMark(project.title)}
-                      </div>
-                      <span className="project-card__index">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    <div className="project-card__body">
-                      <p className="project-card__eyebrow">
-                        {project.eyebrow}
-                        {project.status ? (
-                          <span className="status-pill">{project.status}</span>
-                        ) : null}
-                      </p>
-                      <div className="project-card__title">
-                        <h3>{project.title}</h3>
-                        {link ? (
-                          <a
-                            className="project-card__link"
-                            href={link.href}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            aria-label={`${link.label}: ${project.title}`}
-                          >
-                            <span>{link.label}</span>
-                            <ArrowUpRight aria-hidden="true" />
-                          </a>
-                        ) : null}
-                      </div>
-                      <p className="project-card__summary">{project.summary}</p>
-                    </div>
-
-                    <ul
-                      className="project-card__tech"
-                      aria-label={`${project.title} technologies`}
-                    >
-                      {project.technologies.slice(0, 4).map((technology) => (
-                        <li key={technology}>{technology}</li>
-                      ))}
-                    </ul>
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
-
-          <section className="section" id="tools" aria-labelledby="tools-title">
-            <div className="section-head">
-              <h2 id="tools-title">Toolkit</h2>
-              <p>Technology should support the idea, never distract from it.</p>
-            </div>
-
-            <div className="tool-groups">
-              <div className="tool-group">
-                <p>AI collaborators</p>
-                <ul className="tool-list">
-                  {aiTools.map((tool) => (
-                    <li key={tool}>{tool}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="tool-group">
-                <p>Engineering &amp; design</p>
-                <ul className="tool-list">
-                  {stack.map((tool) => (
-                    <li key={tool}>{tool}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="contact-band" id="contact" aria-labelledby="contact-title">
-            <div>
-              <span>Start a conversation</span>
-              <h2 id="contact-title">Let&apos;s build something clear and useful.</h2>
-            </div>
+        <div className="hero-footer">
+          <div className="profile-links" aria-label="Profile links">
             <a
-              className="contact-cta"
-              href="mailto:thisisantonio_@outlook.com"
+              href="https://github.com/bashlui"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              <Mail aria-hidden="true" />
-              Email Antonio
+              GitHub <span aria-hidden="true">↗</span>
             </a>
-          </section>
-        </article>
+            <a
+              href="https://www.linkedin.com/in/luisbolaina/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="/Antonio_Resume.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Résumé <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <footer>
-          <span>Antonio Bolaina · Software engineer</span>
-          <span>Monterrey, MX · © {new Date().getFullYear()}</span>
-        </footer>
-      </main>
-    </>
+      <section className="section" id="work" aria-labelledby="work-title">
+        <div className="section-heading">
+          <p className="section-number">01</p>
+          <h2 id="work-title">Selected work</h2>
+          <p>Products and systems I&apos;ve helped design and engineer.</p>
+        </div>
+
+        <ol className="project-list">
+          {projects.map((project, index) => {
+            const link = project.links[0]
+
+            return (
+              <li className="project" id={project.slug} key={project.slug}>
+                <p className="project-index">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+
+                <div className="project-content">
+                  <div className="project-title-row">
+                    <h3>{project.title}</h3>
+                    {link ? (
+                      <a
+                        href={link.href}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        aria-label={`${link.label}: ${project.title}`}
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : null}
+                  </div>
+
+                  <p className="project-meta">
+                    {project.eyebrow} · {project.timeframe}
+                    {project.status ? ` · ${project.status}` : ""}
+                  </p>
+                  <p className="project-summary">{project.summary}</p>
+                  <p className="project-tech">
+                    {project.technologies.join(" · ")}
+                  </p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+      </section>
+
+      <section className="section" id="about" aria-labelledby="about-title">
+        <div className="section-heading">
+          <p className="section-number">02</p>
+          <h2 id="about-title">About &amp; toolkit</h2>
+          <p>Tools change. Curiosity, care, and clear thinking do not.</p>
+        </div>
+
+        <div className="about-grid">
+          <p className="about-copy">
+            I enjoy turning ambiguous problems into calm, dependable products.
+            My work moves between product design, frontend engineering, backend
+            systems, and native Apple development.
+          </p>
+
+          <dl className="tool-list">
+            <div>
+              <dt>AI</dt>
+              <dd>{aiTools.join(", ")}</dd>
+            </div>
+            <div>
+              <dt>Engineering</dt>
+              <dd>{stack.join(", ")}</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="contact" id="contact" aria-labelledby="contact-title">
+        <p className="section-number">03</p>
+        <div>
+          <h2 id="contact-title">Let&apos;s make something useful.</h2>
+          <a href="mailto:thisisantonio_@outlook.com">
+            thisisantonio_@outlook.com <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>Antonio Bolaina</span>
+        <span>© {new Date().getFullYear()}</span>
+      </footer>
+    </main>
   )
 }

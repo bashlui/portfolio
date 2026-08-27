@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -10,13 +10,6 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -43,17 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.variable} ${geistMono.variable} ${instrument.variable} antialiased`}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              'try{if(sessionStorage.getItem("antonio-welcome")==="1"||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("welcome-seen")}catch(e){}',
-          }}
-        />
-        <noscript>
-          <style>{`.welcome-intro{display:none!important}.site-header,.hero-copy,.portrait-wrap{opacity:1!important;transform:none!important}html{overflow:auto!important}`}</style>
-        </noscript>
+    <html lang="en">
+      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
