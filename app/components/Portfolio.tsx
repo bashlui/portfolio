@@ -1,19 +1,41 @@
+import Image from "next/image"
 import { projects } from "../data/projects"
 
-const aiTools = ["ChatGPT", "Claude Code", "Cursor", "OpenCode", "MCP"]
+type Tool = { name: string; logo: string }
 
-const stack = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Swift",
-  "Python",
-  "Node.js",
-  "Redis",
-  "Firebase",
-  "Docker",
-  "Figma",
+const aiTools: Tool[] = [
+  { name: "ChatGPT", logo: "openai" },
+  { name: "Claude Code", logo: "claude" },
+  { name: "Cursor", logo: "cursor" },
+  { name: "OpenCode", logo: "opencode" },
+  { name: "MCP", logo: "mcp" },
 ]
+
+const stack: Tool[] = [
+  { name: "TypeScript", logo: "typescript" },
+  { name: "React", logo: "react" },
+  { name: "Next.js", logo: "nextdotjs" },
+  { name: "Swift", logo: "swift" },
+  { name: "Python", logo: "python" },
+  { name: "Node.js", logo: "nodedotjs" },
+  { name: "Redis", logo: "redis" },
+  { name: "Firebase", logo: "firebase" },
+  { name: "Docker", logo: "docker" },
+  { name: "Figma", logo: "figma" },
+]
+
+function ToolItems({ tools }: { tools: Tool[] }) {
+  return (
+    <ul className="tool-items">
+      {tools.map(({ name, logo }) => (
+        <li className="tool-item" key={name}>
+          <Image src={`/tool-logos/${logo}.svg`} alt="" width={20} height={20} />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function Portfolio() {
   return (
@@ -129,11 +151,11 @@ export default function Portfolio() {
           <dl className="tool-list">
             <div>
               <dt>AI</dt>
-              <dd>{aiTools.join(", ")}</dd>
+              <dd><ToolItems tools={aiTools} /></dd>
             </div>
             <div>
               <dt>Engineering</dt>
-              <dd>{stack.join(", ")}</dd>
+              <dd><ToolItems tools={stack} /></dd>
             </div>
           </dl>
         </div>
