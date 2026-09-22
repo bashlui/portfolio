@@ -14,19 +14,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ntonio.vercel.app"),
-  title: "Antonio — Software Engineer",
-  description: "Antonio is a software engineer building thoughtful digital products, AI systems, and native experiences.",
+  title: "Antonio Bolaina — Product engineer",
+  description:
+    "Antonio Bolaina is a product engineer who uses AI every day and designs products that use it — on-device vision, native apps, and the interfaces that have to earn trust.",
   openGraph: {
-    title: "Antonio — Software Engineer",
-    description: "Thoughtful digital products, AI systems, and native experiences.",
+    title: "Antonio Bolaina — Product engineer",
+    description:
+      "I use AI every day. I also design the products that use it.",
     url: "https://ntonio.vercel.app",
-    siteName: "Antonio",
+    siteName: "Antonio Bolaina",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Antonio — Software Engineer",
-    description: "Thoughtful digital products, AI systems, and native experiences.",
+    title: "Antonio Bolaina — Product engineer",
+    description:
+      "I use AI every day. I also design the products that use it.",
   },
 };
 

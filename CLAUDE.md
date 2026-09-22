@@ -4,26 +4,25 @@ Next.js 15 / React 19 / TypeScript portfolio site.
 
 ## Design system
 
-- Minimal editorial direction with an asymmetrical split hero and circular
-  illustrated portrait.
-- Large, light-weight brand typography is balanced by soft geometric project
-  cards, pill controls, and compact tool icon groups.
-- Light and dark palettes follow `prefers-color-scheme` automatically.
-- Geist Sans leads the identity, a restrained editorial serif adds contrast, and
-  Geist Mono is reserved for labels and metadata.
-- Buttons remain physically static; restrained ambient effects respect
-  `prefers-reduced-motion`.
-- Simple Icons provides locally bundled brand marks for AI and engineering tools.
-- A React Bits-inspired spotlight treatment subtly enhances project cards.
+- Product-forward layout inspired by Framer and Bay Area software sites:
+  a direct statement, a studio surface, and work that shows where
+  intelligence lives.
+- Moving atmospheric gradient is the page background; it intensifies as the
+  expanding footer takes the last scroll.
+- Geist Sans carries display and body. Geist Mono is reserved for the studio
+  chrome, clock, and technical strings.
+- Light and dark palettes follow `prefers-color-scheme`. Buttons stay
+  physically static. Motion respects `prefers-reduced-motion`.
+- AI is shown in the work and practice split, not as a skills list.
 - `app/globals.css` is the source of truth for tokens and responsive behavior.
 
 ## Architecture
 
 | File | Purpose |
 |---|---|
-| `app/components/Portfolio.tsx` | Main one-page portfolio composition |
-| `app/components/react-bits/` | Locally owned React Bits adaptations |
-| `app/data/projects.ts` | Typed project content |
+| `app/components/Portfolio.tsx` | Main one-page composition |
+| `app/components/ExpandingFooter.tsx` | Scroll-linked contact footer |
+| `app/data/projects.ts` | Typed project content, including AI role |
 | `app/globals.css` | Theme, layout, responsive rules, and motion |
 
 The portfolio intentionally exposes a single content route: `/`.
