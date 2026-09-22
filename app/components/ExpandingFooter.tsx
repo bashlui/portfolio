@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { FileText, Github, Linkedin } from "lucide-react"
 import GradientField from "./GradientField"
 
 const links = [
-  { href: "https://github.com/bashlui", label: "GitHub" },
-  { href: "https://www.linkedin.com/in/luisbolaina/", label: "LinkedIn" },
-  { href: "/Antonio_Resume.pdf", label: "Résumé" },
+  { href: "https://github.com/bashlui", label: "GitHub", Icon: Github },
+  { href: "https://www.linkedin.com/in/luisbolaina/", label: "LinkedIn", Icon: Linkedin },
+  { href: "/Antonio_Resume.pdf", label: "Résumé", Icon: FileText },
 ] as const
 
 const monterreyFormatter = new Intl.DateTimeFormat("en-GB", {
@@ -70,8 +71,9 @@ function MonterreyClock() {
 export default function ExpandingFooter() {
   return (
     <footer className="expand-footer" id="contact">
-      <GradientField variant="warm" />
-      <div className="expand-footer-panel">
+      <div className="expand-footer-card">
+        <GradientField variant="warm" />
+        <div className="expand-footer-panel">
         <p className="expand-kicker">Monterrey</p>
         <h2 id="contact-title">Let’s make something useful.</h2>
         <a className="expand-mail" href="mailto:thisisantonio_@outlook.com">
@@ -80,17 +82,19 @@ export default function ExpandingFooter() {
 
         <nav className="expand-links" aria-label="Elsewhere">
           {links.map((link) => (
-            <a href={link.href} rel="noopener noreferrer" target="_blank" key={link.label}>
-              {link.label}
+            <a className="expand-link" href={link.href} rel="noopener noreferrer" target="_blank" key={link.label} aria-label={link.label}>
+              <span className="expand-link-label" aria-hidden="true">{link.label}</span>
+              <link.Icon className="expand-link-icon" aria-hidden="true" size={18} strokeWidth={1.8} />
             </a>
           ))}
         </nav>
 
-        <div className="expand-meta">
-          <span>Antonio Bolaina</span>
-          <MonterreyClock />
-          <span>© {new Date().getFullYear()}</span>
         </div>
+      </div>
+      <div className="expand-meta">
+        <span>Antonio Bolaina</span>
+        <MonterreyClock />
+        <span>© {new Date().getFullYear()}</span>
       </div>
     </footer>
   )

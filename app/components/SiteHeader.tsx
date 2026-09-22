@@ -1,11 +1,13 @@
-import GradientField from "./GradientField"
-
 export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header-bar">
         <a className="site-mark" href="#top" aria-label="Antonio Bolaina, home">
-          <GradientField variant="accent" />
+          <span className="site-face" aria-hidden="true">
+            <span className="site-face-eye site-face-eye--left" />
+            <span className="site-face-eye site-face-eye--right" />
+            <span className="site-face-smile" />
+          </span>
           Antonio Bolaina
         </a>
         <nav aria-label="Sections">
